@@ -19,14 +19,14 @@ Your task:
 4. Avoid fatalistic or absolute language. Offer guidance, not doom.
 5. Be practical, grounded, and psychologically supportive.
 
-Return ONLY valid JSON in this exact TypeScript type:
+CRITICAL: You MUST respond with ONLY a valid JSON object, no other text before or after. Use this exact format:
 
-type AiInterpretation = {
-  summary: string;      // 1–3 sentence TL;DR
-  mainReading: string;  // 3–8 paragraphs deep explanation
-  risks: string;        // 1–3 paragraphs: pitfalls, blind spots, what to watch out for
-  guidance: string;     // 3–7 bullet-style lines as plain text paragraphs with clear advice
-};
+{
+  "summary": "1-3 sentence TL;DR",
+  "mainReading": "3-8 paragraphs deep explanation",
+  "risks": "1-3 paragraphs: pitfalls, blind spots, what to watch out for",
+  "guidance": "3-7 bullet-style lines as plain text paragraphs with clear advice"
+}
 `.trim();
 
 const SYSTEM_PROMPT_ZH = `
@@ -45,14 +45,14 @@ const SYSTEM_PROMPT_ZH = `
 4. 避免宿命论或绝对化的语言。提供指引，而非厄运预言。
 5. 实用、务实、心理上支持问卦者。
 
-仅返回有效的JSON，格式如下：
+重要：你必须只返回一个有效的 JSON 对象，前后不要有任何其他文本。使用以下格式：
 
-type AiInterpretation = {
-  summary: string;      // 1-3句话的简要概括
-  mainReading: string;  // 3-8段深入的解读
-  risks: string;        // 1-3段：陷阱、盲点、需要注意的事项
-  guidance: string;     // 3-7条建议，以段落形式提供清晰的指导
-};
+{
+  "summary": "1-3句话的简要概括",
+  "mainReading": "3-8段深入的解读",
+  "risks": "1-3段：陷阱、盲点、需要注意的事项",
+  "guidance": "3-7条建议，以段落形式提供清晰的指导"
+}
 `.trim();
 
 function buildUserPrompt(payload: InterpretRequest): string {
@@ -133,13 +133,17 @@ export async function POST(req: NextRequest) {
   const systemPrompt = language === "zh" ? SYSTEM_PROMPT_ZH : SYSTEM_PROMPT_EN;
 
   try {
+    // Add timeout to prevent Vercel function timeout (10s limit on free tier)
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 25000); // 25s timeout
+    
     const openRouterRes = await fetch(`${baseUrl}/chat/completions`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
         // These headers are recommended by OpenRouter
-        "HTTP-Referer": process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
+        "HTTP-Referer": process.env.NEXT_PUBLIC_APP_URL ?? "https://hex-oracle.vercel.app",
         "X-Title": "Hex Oracle",
       },
       body: JSON.stringify({
@@ -148,17 +152,25 @@ export async function POST(req: NextRequest) {
           { role: "system", content: systemPrompt },
           { role: "user", content: userPrompt },
         ],
-        // Ask the model to always return JSON
-        response_format: { type: "json_object" },
+        temperature: 0.7,
+        max_tokens: 2000,
       }),
+      signal: controller.signal,
     });
+    
+    clearTimeout(timeoutId);
 
     if (!openRouterRes.ok) {
       const text = await openRouterRes.text();
-      console.error("OpenRouter error:", text);
+      console.error("OpenRouter error:", {
+        status: openRouterRes.status,
+        statusText: openRouterRes.statusText,
+        body: text,
+        model,
+      });
       const res: InterpretResponse = {
         success: false,
-        error: "Upstream AI request failed.",
+        error: `AI service returned error (${openRouterRes.status}). Please try again.`,
       };
       return NextResponse.json(res, { status: 502 });
     }
@@ -167,6 +179,7 @@ export async function POST(req: NextRequest) {
     const content = json.choices?.[0]?.message?.content;
 
     if (!content) {
+      console.error("Empty AI response:", json);
       const res: InterpretResponse = {
         success: false,
         error: "AI response did not contain any content.",
@@ -176,9 +189,16 @@ export async function POST(req: NextRequest) {
 
     let parsed: unknown;
     try {
-      parsed = JSON.parse(content);
+      // Remove markdown code blocks if present (```json ... ```)
+      let cleanContent = content.trim();
+      if (cleanContent.startsWith('```')) {
+        cleanContent = cleanContent.replace(/^```(?:json)?\s*\n?/i, '').replace(/\n?```\s*$/,'');
+      }
+      
+      parsed = JSON.parse(cleanContent);
     } catch (e) {
-      console.error("Failed to parse AI JSON:", e, content);
+      console.error("Failed to parse AI JSON:", e);
+      console.error("Content:", content);
       const res: InterpretResponse = {
         success: false,
         error: "AI response was not valid JSON.",
@@ -193,6 +213,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(res, { status: 200 });
   } catch (err) {
     console.error("AI interpret error:", err);
+    
+    // Handle timeout specifically
+    if (err instanceof Error && err.name === 'AbortError') {
+      const res: InterpretResponse = {
+        success: false,
+        error: "AI request timed out. Please try again.",
+      };
+      return NextResponse.json(res, { status: 504 });
+    }
+    
     const res: InterpretResponse = {
       success: false,
       error: "Unexpected server error while calling AI.",
