@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+import { useI18n } from "@/lib/i18n/useI18n";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -9,7 +9,7 @@ interface IntroStepProps {
 }
 
 export function IntroStep({ onBegin }: IntroStepProps) {
-  const { t } = useTranslation();
+  const { t } = useI18n();
 
   return (
     <div className="max-w-2xl mx-auto text-center space-y-8">

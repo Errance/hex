@@ -1,14 +1,14 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+import { useI18n } from "@/lib/i18n/useI18n";
 import { Button } from "@/components/ui/button";
 
 export function LanguageToggle() {
-  const { i18n } = useTranslation();
+  const { t, lang, setLang } = useI18n();
 
   const toggleLanguage = () => {
-    const newLang = i18n.language === "zh" ? "en" : "zh";
-    i18n.changeLanguage(newLang);
+    const newLang = lang === "zh" ? "en" : "zh";
+    setLang(newLang);
   };
 
   return (
@@ -17,9 +17,9 @@ export function LanguageToggle() {
       size="sm"
       onClick={toggleLanguage}
       className="text-xs min-w-16"
-      title="Switch Language / 切换语言"
+      title={t("common.languageSwitch")}
     >
-      {i18n.language === "zh" ? "EN" : "中文"}
+      {lang === "zh" ? "EN" : "中文"}
     </Button>
   );
 }

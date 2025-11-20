@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useI18n } from "@/lib/i18n/useI18n";
 import type { CoinValue } from "@/types/divination";
 
 interface CoinAnimationProps {
@@ -9,6 +10,8 @@ interface CoinAnimationProps {
 }
 
 export function CoinAnimation({ coins, isAnimating }: CoinAnimationProps) {
+  const { t } = useI18n();
+  
   return (
     <div className="flex gap-8 items-center justify-center">
       {coins.map((coin, index) => (
@@ -41,9 +44,9 @@ export function CoinAnimation({ coins, isAnimating }: CoinAnimationProps) {
             {/* 文字 */}
             <div className="absolute inset-0 flex items-center justify-center">
               {coin === 3 ? (
-                <span className="text-2xl font-bold text-primary drop-shadow-md">陽</span>
+                <span className="text-2xl font-bold text-primary drop-shadow-md">{t("common.yang")}</span>
               ) : (
-                <span className="text-2xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">陰</span>
+                <span className="text-2xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{t("common.yin")}</span>
               )}
             </div>
           </div>

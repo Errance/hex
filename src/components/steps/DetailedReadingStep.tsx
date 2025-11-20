@@ -69,13 +69,13 @@ export function DetailedReadingStep({
       const result = await response.json();
 
       if (!result.success) {
-        throw new Error(result.error || "Failed to get interpretation");
+        throw new Error(result.error || t("errors.apiError"));
       }
 
       setInterpretation(result.data);
       onSaveReading(question, result.data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "An unexpected error occurred");
+      setError(err instanceof Error ? err.message : t("errors.generic"));
     } finally {
       setIsLoading(false);
     }

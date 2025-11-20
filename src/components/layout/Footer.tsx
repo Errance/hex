@@ -1,9 +1,9 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+import { useI18n } from "@/lib/i18n/useI18n";
 
 export function Footer() {
-  const { t } = useTranslation();
+  const { t } = useI18n();
   
   return (
     <footer className="border-t border-border mt-auto">

@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useI18n } from "@/lib/i18n/useI18n";
 import { Button } from "@/components/ui/button";
 
 export function ThemeToggle() {
-  const { t, i18n } = useTranslation();
+  const { t } = useI18n();
   const [theme, setTheme] = useState<"zen" | "fengshui">("zen");
 
   useEffect(() => {
@@ -26,13 +26,6 @@ export function ThemeToggle() {
     localStorage.setItem("hex-oracle-theme", newTheme);
   };
   
-  const getThemeLabel = () => {
-    if (i18n.language === "zh") {
-      return theme === "zen" ? "禅道" : "风水";
-    }
-    return theme === "zen" ? "禅 Zen" : "风水 Fengshui";
-  };
-
   return (
     <Button
       variant="outline"
@@ -40,7 +33,7 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       className="text-xs"
     >
-      {getThemeLabel()}
+      {t(theme === "zen" ? "theme.zen" : "theme.fengshui")}
     </Button>
   );
 }

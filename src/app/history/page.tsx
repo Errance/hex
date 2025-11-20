@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { useI18n } from "@/lib/i18n/useI18n";
 import { useAppStore } from "@/store/useAppStore";
 import { HistoryList } from "@/components/history/HistoryList";
 import { HexagramDiagram } from "@/components/reading/HexagramDiagram";
@@ -18,7 +18,6 @@ import {
 } from "@/components/ui/dialog";
 import { getHexagramView } from "@/content/hexagrams";
 import type { HexagramView } from "@/content/hexagrams";
-import { useI18n } from "@/lib/i18n/useI18n";
 import type { DivinationRecord } from "@/types/divination";
 
 export default function HistoryPage() {

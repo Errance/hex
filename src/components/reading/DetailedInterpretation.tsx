@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+import { useI18n } from "@/lib/i18n/useI18n";
 import { Card } from "@/components/ui/card";
 import type { AiInterpretation } from "@/types/divination";
 
@@ -11,7 +11,7 @@ interface DetailedInterpretationProps {
 export function DetailedInterpretation({
   interpretation,
 }: DetailedInterpretationProps) {
-  const { t } = useTranslation();
+  const { t } = useI18n();
   
   return (
     <div className="space-y-6">

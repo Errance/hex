@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+import { useI18n } from "@/lib/i18n/useI18n";
 import { Card } from "@/components/ui/card";
 import type { HexagramView } from "@/content/hexagrams";
 
@@ -9,7 +9,7 @@ interface InitialInterpretationProps {
 }
 
 export function InitialInterpretation({ summary }: InitialInterpretationProps) {
-  const { t } = useTranslation();
+  const { t } = useI18n();
   
   const toneColors = {
     very_favorable: "text-green-500",

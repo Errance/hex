@@ -102,4 +102,9 @@ footer.text,Hex Oracle • Ancient Wisdom for Modern Seekers,易经占卜 • �
 errors.generic,An error occurred. Please try again.,发生错误。请重试,Generic error,errors
 errors.apiError,Failed to get interpretation from the oracle.,无法从神谕获取解读,API error,errors
 errors.networkError,Network error. Please check your connection.,网络错误。请检查你的连接,Network error,errors
+common.loading,Loading...,加载中...,Loading state,common
+common.close,Close,关闭,Close button,common
+common.yin,Yin,阴,Yin (feminine),common
+common.yang,Yang,阳,Yang (masculine),common
+common.languageSwitch,Switch Language / 切换语言,Switch Language / 切换语言,Language toggle title,common
 

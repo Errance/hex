@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+import { useI18n } from "@/lib/i18n/useI18n";
 import type { HexagramView } from "@/content/hexagrams";
 import type { LineCast } from "@/types/divination";
 
@@ -10,7 +10,7 @@ interface HexagramDiagramProps {
 }
 
 export function HexagramDiagram({ hexagram, lines }: HexagramDiagramProps) {
-  const { t } = useTranslation();
+  const { t } = useI18n();
   // Sort lines from bottom (1) to top (6)
   const sortedLines = [...lines].sort((a, b) => a.index - b.index);
 

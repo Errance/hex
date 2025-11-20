@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { useTranslation } from "react-i18next";
+import { useI18n } from "@/lib/i18n/useI18n";
 import { Button } from "@/components/ui/button";
 import { CastModeSelector } from "../casting/CastModeSelector";
 import { CoinAnimation } from "../casting/CoinAnimation";
@@ -26,7 +26,7 @@ export function CastStep({
   onAnimationToggle,
   onComplete,
 }: CastStepProps) {
-  const { t } = useTranslation();
+  const { t } = useI18n();
   const [isCasting, setIsCasting] = useState(false);
   const [currentCoins, setCurrentCoins] = useState<[CoinValue, CoinValue, CoinValue]>([2, 2, 2]);
   const [lines, setLines] = useState<LineCast[]>([]);
@@ -196,7 +196,7 @@ export function CastStep({
             className="min-w-48"
           >
             {isLoadingBitcoin 
-              ? "Loading..."
+              ? t("common.loading")
               : isCasting 
                 ? t("cast.casting") 
                 : t("cast.castAllButton")}
@@ -211,7 +211,7 @@ export function CastStep({
             disabled={isLoadingBitcoin}
             className="min-w-48"
           >
-            {isLoadingBitcoin ? "Loading..." : t("cast.shakeFirst")}
+            {isLoadingBitcoin ? t("common.loading") : t("cast.shakeFirst")}
           </Button>
         )}
 
