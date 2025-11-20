@@ -129,7 +129,7 @@ export default function HomePage() {
           changingHexagramId={changingHexagramId}
           movingLines={movingLines}
           onSaveReading={handleSaveReading}
-        />
+            />
       )}
 
       <MockLoginModal

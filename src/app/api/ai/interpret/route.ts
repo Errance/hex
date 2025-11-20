@@ -115,12 +115,23 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(res, { status: 400 });
   }
 
-  const apiKey = process.env.OPENROUTER_API_KEY;
-  const baseUrl =
-    process.env.OPENROUTER_BASE_URL ?? "https://openrouter.ai/api/v1";
-  const model = process.env.OPENROUTER_MODEL ?? "openai/gpt-4o-mini";
+  // Trim all environment variables to remove any whitespace/newlines
+  const apiKey = process.env.OPENROUTER_API_KEY?.trim();
+  const baseUrl = (process.env.OPENROUTER_BASE_URL ?? "https://openrouter.ai/api/v1").trim();
+  const model = (process.env.OPENROUTER_MODEL ?? "openai/gpt-4o-mini").trim();
+
+  // Debug logging
+  console.log('API Configuration:', {
+    hasApiKey: !!apiKey,
+    apiKeyLength: apiKey?.length,
+    apiKeyPrefix: apiKey?.substring(0, 15) + '...',
+    baseUrl,
+    model,
+    language: body.language || "en",
+  });
 
   if (!apiKey) {
+    console.error('Missing OPENROUTER_API_KEY');
     const res: InterpretResponse = {
       success: false,
       error: "OPENROUTER_API_KEY is not configured on the server.",
