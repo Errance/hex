@@ -1,0 +1,104 @@
+key,en,zh,context,category
+app.title,Hex Oracle,易经占卜,Application title,general
+app.subtitle,I Ching Divination,周易占卜,Application subtitle,general
+app.tagline,Ancient Wisdom for Modern Seekers,古老智慧，现代启迪,Application tagline,general
+nav.history,History,历史记录,Navigation link,navigation
+nav.language,Language,语言,Navigation link,navigation
+theme.zen,Zen,禅道,Theme name,theme
+theme.fengshui,Fengshui,风水,Theme name,theme
+intro.title,Ask the Oracle,问卦神谕,Intro page title,intro
+intro.subtitle,易经占卜 • Ancient Wisdom for Modern Seekers,易经占卜 • 古老智慧 现代启迪,Intro subtitle,intro
+intro.howItWorks,How It Works,如何运作,Section title,intro
+intro.step1.title,Focus on your question.,专注于你的问题,Step 1 title,intro
+intro.step1.desc,Hold it silently in your mind as you prepare to cast.,在准备占卜时将问题默默记在心中,Step 1 description,intro
+intro.step2.title,Cast the coins.,投掷铜钱,Step 2 title,intro
+intro.step2.desc,Use three ancient coins to generate six lines forming your hexagram.,用三枚古钱币生成六爻，构成你的卦象,Step 2 description,intro
+intro.step3.title,Receive guidance.,获得指引,Step 3 title,intro
+intro.step3.desc,Get an initial reading and unlock deeper insights.,获得初步解读并解锁更深层的洞察,Step 3 description,intro
+intro.beginButton,Begin Casting,开始占卜,Begin button text,intro
+intro.description,The I Ching (Yijing) has guided seekers for over 3000 years.,易经已为求道者指引方向超过3000年,Description line 1,intro
+intro.description2,Let its ancient wisdom illuminate your path forward.,让古老的智慧照亮你前行的道路,Description line 2,intro
+cast.title,Cast Your Hexagram,投掷你的卦象,Casting page title,casting
+cast.subtitle,Focus on your question as the coins are thrown,投掷铜钱时专注于你的问题,Casting subtitle,casting
+cast.chooseMethod,Choose Casting Method,选择占卜方式,Section title,casting
+cast.autoMode.title,Auto Cast,自动占卜,Auto mode title,casting
+cast.autoMode.desc,Cast all six lines at once automatically,自动一次性投掷所有六爻,Auto mode description,casting
+cast.manualMode.title,Manual Cast,手动占卜,Manual mode title,casting
+cast.manualMode.desc,Cast one line at a time with each shake,每次摇动投掷一爻,Manual mode description,casting
+cast.animation.title,Animation,动画效果,Animation section title,casting
+cast.animation.enabled,Show coin animation,显示铜钱动画,Animation enabled option,casting
+cast.animation.disabled,Fast mode (no animation),快速模式（无动画）,Animation disabled option,casting
+cast.animation.btnEnabled,Enabled,已启用,Animation button enabled,casting
+cast.animation.btnDisabled,Disabled,已禁用,Animation button disabled,casting
+cast.progress,Progress,进度,Progress label,casting
+cast.coinsPlaceholder,Coins will appear here during casting,铜钱将在占卜时出现在此处,Placeholder text,casting
+cast.hexagramPlaceholder,Your hexagram will form here,你的卦象将在此处形成,Placeholder text,casting
+cast.castAllButton,Cast All Lines,投掷所有爻,Cast all button,casting
+cast.casting,Casting...,占卜中...,Casting status,casting
+cast.shakeFirst,Shake for First Line,摇动投掷第一爻,Shake first button,casting
+cast.shakeLine,Shake for Line {{line}},摇动投掷第{{line}}爻,Shake line button,casting
+cast.shaking,Shaking...,摇动中...,Shaking status,casting
+cast.complete,Hexagram complete! Preparing your reading...,卦象完成！正在准备你的解读...,Complete message,casting
+hexagram.over,over,变为,Transformation indicator,hexagram
+hexagram.movingLinesLabel,Moving line(s),动爻,Moving lines label,hexagram
+reading.initialTitle,Your Hexagram,你的卦象,Initial reading title,reading
+reading.initialSubtitle,The oracle has spoken. Here is your initial reading.,神谕已现。这是你的初步解读,Initial reading subtitle,reading
+reading.detailedTitle,Detailed Reading,详细解读,Detailed reading title,reading
+reading.detailedSubtitle,Describe your question to receive personalized guidance,描述你的问题以获得个性化指引,Detailed reading subtitle,reading
+reading.description,Description,卦象简介,Section label,reading
+reading.judgment,Judgment,卦辞,Section label,reading
+reading.image,Image,象辞,Section label,reading
+reading.movingLines,Moving Lines,动爻,Section label,reading
+reading.movingLinesCount,Moving Lines ({{count}}),动爻（{{count}}个）,Moving lines count,reading
+reading.transformsInto,Moving lines transform this hexagram into:,动爻将此卦象变为:,Transformation text,reading
+reading.transformation,This transformation adds depth to your reading,此变化为你的解读增添了深度,Transformation description,reading
+reading.wantDeeper,Want deeper insights?,想要更深入的洞察？,CTA title,reading
+reading.wantDeeperDesc,Get a personalized AI interpretation that speaks directly to your specific question and situation.,获得针对你具体问题和情况的个性化AI解读,CTA description,reading
+reading.viewDetailed,View Detailed Reading,查看详细解读,View button,reading
+reading.startNew,Start New Casting,开始新的占卜,Start new button,reading
+reading.yourHexagram,Your Hexagram,你的卦象,Label,reading
+reading.yourQuestion,Your Question,你的问题,Label,reading
+reading.questionLabel,Describe your question in your own words,用你自己的话描述你的问题,Input label,reading
+reading.questionPlaceholder,For example: Should I accept the new job offer? I'm feeling uncertain about leaving my current position...,例如：我是否应该接受新的工作机会？我对离开当前职位感到不确定...,Input placeholder,reading
+reading.questionHint,The more context you provide the more insightful the interpretation will be.,你提供的背景越多，解读就会越有洞察力,Hint text,reading
+reading.askOracle,Ask the Oracle,询问神谕,Submit button,reading
+reading.consulting,Consulting the Oracle...,正在咨询神谕...,Loading status,reading
+reading.askAnother,Ask Another Question,询问另一个问题,Button text,reading
+reading.viewHistory,View History,查看历史,Button text,reading
+reading.over,over,变为,Transformation indicator,reading
+interpretation.summary,Summary,摘要,Section title,interpretation
+interpretation.detailedReading,Detailed Reading,详细解读,Section title,interpretation
+interpretation.risks,Risks & Pitfalls,风险与陷阱,Section title,interpretation
+interpretation.guidance,Guidance,指引,Section title,interpretation
+interpretation.initial,Initial Reading,初步解读,Section title,interpretation
+interpretation.personalized,Personalized Interpretation,个性化解读,Section title,interpretation
+interpretation.tone.very_favorable,Very Favorable,非常吉利,Tone label,interpretation
+interpretation.tone.favorable,Favorable,吉利,Tone label,interpretation
+interpretation.tone.neutral,Neutral,中性,Tone label,interpretation
+interpretation.tone.challenging,Challenging,具有挑战,Tone label,interpretation
+interpretation.scenes.career,Career,事业,Scene label,interpretation
+interpretation.scenes.love,Love,情感,Scene label,interpretation
+interpretation.scenes.wealth,Wealth,财运,Scene label,interpretation
+interpretation.scenes.health,Health,健康,Scene label,interpretation
+auth.title,Sign in to unlock detailed readings,登录以解锁详细解读,Modal title,auth
+auth.description,Enter your email to access personalized interpretations from the oracle.,输入你的邮箱以访问神谕的个性化解读,Modal description,auth
+auth.emailPlaceholder,your.email@example.com,your.email@example.com,Email input placeholder,auth
+auth.continueButton,Continue,继续,Submit button,auth
+auth.disclaimer,This is a demo. Your email is only stored locally and never sent to any server.,这是一个演示。你的邮箱仅存储在本地，永远不会发送到任何服务器,Disclaimer text,auth
+auth.emailRequired,Please enter a valid email address,请输入有效的邮箱地址,Validation error,auth
+history.title,Reading History,解读历史,Page title,history
+history.subtitle,Review your past consultations with the oracle,回顾你过去与神谕的对话,Page subtitle,history
+history.empty.title,No readings yet,还没有解读记录,Empty state title,history
+history.empty.desc,Your divination history will appear here once you complete your first reading.,完成第一次占卜后，你的占卜历史将在此显示,Empty state description,history
+history.empty.button,Start New Reading,开始新的解读,Empty state button,history
+history.aiInterpreted,AI Interpreted,AI已解读,Status label,history
+history.movingLinesLabel,Moving Lines,动爻,Label,history
+history.view,View,查看,View button,history
+history.close,Close,关闭,Close button,history
+history.readingFrom,Reading from {{date}},来自{{date}}的解读,Reading timestamp,history
+footer.trigrams,☰ ☷ ☵ ☲ ☳ ☴ ☶ ☱,☰ ☷ ☵ ☲ ☳ ☴ ☶ ☱,Trigram symbols,footer
+footer.text,Hex Oracle • Ancient Wisdom for Modern Seekers,易经占卜 • 古老智慧 现代启迪,Footer text,footer
+errors.generic,An error occurred. Please try again.,发生错误。请重试,Generic error,errors
+errors.apiError,Failed to get interpretation from the oracle.,无法从神谕获取解读,API error,errors
+errors.networkError,Network error. Please check your connection.,网络错误。请检查你的连接,Network error,errors
+

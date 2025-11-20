@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# i18n generated files (auto-generated from translations.csv)
+/src/lib/i18n/generated/

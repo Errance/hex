@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
+import { useI18n } from "@/lib/i18n/useI18n";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageToggle } from "./LanguageToggle";
 
 export function Header() {
-  const { t } = useTranslation();
+  const { t } = useI18n();
 
   return (
     <header className="border-b border-border bg-card/50 backdrop-blur-sm">
