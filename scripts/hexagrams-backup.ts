@@ -2,7 +2,7 @@
 // This is knowledge base, not i18n translations
 // Auto-generated from old i18n data
 
-import type { HexagramContent } from './types';
+import type { HexagramContent } from '../src/content/hexagrams/types';
 
 export const hexagramContents: HexagramContent[] = [
   {
