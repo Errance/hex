@@ -2,12 +2,6 @@
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "framework": "nextjs",
-  "regions": ["hkg1", "sin1"],
-  "env": {
-    "OPENROUTER_API_KEY": "@openrouter_api_key",
-    "OPENROUTER_BASE_URL": "https://openrouter.ai/api/v1",
-    "OPENROUTER_MODEL": "deepseek/deepseek-v3.2-exp"
-  }
+  "framework": "nextjs"
 }
 
