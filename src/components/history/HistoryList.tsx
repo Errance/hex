@@ -1,10 +1,10 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+import { useI18n } from "@/lib/i18n/useI18n";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import type { DivinationRecord } from "@/types/divination";
-import { getHexagramById } from "@/lib/hexagram-utils";
+import { getHexagram } from "@/content/utils";
 
 interface HistoryListProps {
   records: DivinationRecord[];
@@ -12,7 +12,7 @@ interface HistoryListProps {
 }
 
 export function HistoryList({ records, onSelectRecord }: HistoryListProps) {
-  const { t } = useTranslation();
+  const { t, lang } = useI18n();
   
   if (records.length === 0) {
     return (
@@ -32,7 +32,7 @@ export function HistoryList({ records, onSelectRecord }: HistoryListProps) {
   return (
     <div className="space-y-4">
       {records.map((record) => {
-        const hexagram = getHexagramById(record.castResult.baseHexagramId);
+        const hexagram = getHexagram(record.castResult.baseHexagramId, lang);
         const date = new Date(record.createdAt);
         const hasAi = !!record.aiInterpretation;
 
@@ -49,7 +49,7 @@ export function HistoryList({ records, onSelectRecord }: HistoryListProps) {
                   <div>
                     <h3 className="font-semibold text-lg">
                       {hexagram?.name || "Unknown"}{" "}
-                      {hexagram?.nameZh && (
+                      {lang === 'en' && hexagram?.nameZh && (
                         <span className="text-muted-foreground">
                           {hexagram.nameZh}
                         </span>

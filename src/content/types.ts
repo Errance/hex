@@ -36,6 +36,13 @@ export type HexagramContent = {
   nameZh: string;                // Chinese name: "乾"
   namePinyin: string;            // Pinyin: "Qián"
   descriptionShort: Localized;   // Short description
+  
+  // Visual / Structural info
+  trigramUpper: Localized;      // { en: "Heaven", zh: "天" }
+  trigramLower: Localized;
+  symbolUpper: string;          // "☰"
+  symbolLower: string;
+
   judgement: Localized;          // 卦辞 (Judgment)
   imageText: Localized;          // 象辞 (Image)
   lines: LineText[];             // 6 lines with interpretations
@@ -52,6 +59,39 @@ export type HexagramContent = {
 };
 
 /**
+ * View model for consuming components (flattened structure)
+ */
+export type HexagramView = {
+  id: number;
+  name: string;
+  nameZh: string;
+  namePinyin: string;
+  descriptionShort: string;
+  
+  trigramUpper: string;
+  trigramLower: string;
+  symbolUpper: string;
+  symbolLower: string;
+  
+  judgement: string;
+  imageText: string;
+  lines: Array<{
+    index: 1 | 2 | 3 | 4 | 5 | 6;
+    text: string;
+    original?: string;
+  }>;
+  summary: {
+    general: string;
+    tone: HexagramTone;
+    scenes?: {
+      love?: string;
+      career?: string;
+      wealth?: string;
+    };
+  };
+};
+
+/**
  * Helper to get localized value based on language
  */
 export function getLocalized<T>(
@@ -60,4 +100,3 @@ export function getLocalized<T>(
 ): T {
   return localized[lang];
 }
-

@@ -2,10 +2,10 @@
 
 import { useTranslation } from "react-i18next";
 import { Card } from "@/components/ui/card";
-import type { HexagramInitialSummary } from "@/types/hexagram";
+import type { HexagramView } from "@/content/types";
 
 interface InitialInterpretationProps {
-  summary: HexagramInitialSummary;
+  summary: HexagramView['summary'];
 }
 
 export function InitialInterpretation({ summary }: InitialInterpretationProps) {
@@ -24,12 +24,12 @@ export function InitialInterpretation({ summary }: InitialInterpretationProps) {
         <div className="flex items-center gap-2 mb-3">
           <h3 className="text-lg font-semibold">{t("interpretation.initial")}</h3>
           <span
-            className={`text-xs font-medium px-2 py-1 rounded ${toneColors[summary.general.tone]} bg-current/10`}
+            className={`text-xs font-medium px-2 py-1 rounded ${toneColors[summary.tone]} bg-current/10`}
           >
-            {t(`interpretation.tone.${summary.general.tone}`)}
+            {t(`interpretation.tone.${summary.tone}`)}
           </span>
         </div>
-        <p className="text-foreground leading-relaxed">{summary.general.summary}</p>
+        <p className="text-foreground leading-relaxed">{summary.general}</p>
       </div>
 
       {summary.scenes && (

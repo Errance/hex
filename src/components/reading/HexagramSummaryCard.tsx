@@ -2,10 +2,10 @@
 
 import { useTranslation } from "react-i18next";
 import { Card } from "@/components/ui/card";
-import type { HexagramBase } from "@/types/hexagram";
+import type { HexagramView } from "@/content/types";
 
 interface HexagramSummaryCardProps {
-  hexagram: HexagramBase;
+  hexagram: HexagramView;
 }
 
 export function HexagramSummaryCard({ hexagram }: HexagramSummaryCardProps) {

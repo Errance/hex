@@ -9,12 +9,13 @@ import { CastStep } from "@/components/steps/CastStep";
 import { InitialReadingStep } from "@/components/steps/InitialReadingStep";
 import { DetailedReadingStep } from "@/components/steps/DetailedReadingStep";
 import { MockLoginModal } from "@/components/auth/MockLoginModal";
-import { getHexagramByIdI18n, getHexagramSummaryI18n } from "@/lib/i18n/hexagram-i18n-utils";
+import { getHexagram } from "@/content/utils";
 import { getMovingLineIndices } from "@/lib/casting";
+import { useI18n } from "@/lib/i18n/useI18n";
 import type { LineCast, AiInterpretation } from "@/types/divination";
 
 export default function HomePage() {
-  const { i18n } = useTranslation();
+  const { t, lang } = useI18n();
   const {
     currentStep,
     castMethod,
@@ -91,9 +92,8 @@ export default function HomePage() {
   };
 
   // Get hexagram data for current reading with i18n support
-  const hexagram = baseHexagramId ? getHexagramByIdI18n(baseHexagramId, i18n.language) : null;
-  const summary = baseHexagramId ? getHexagramSummaryI18n(baseHexagramId, i18n.language) : null;
-  const changingHexagram = changingHexagramId ? getHexagramByIdI18n(changingHexagramId, i18n.language) : null;
+  const hexagram = baseHexagramId ? getHexagram(baseHexagramId, lang) : null;
+  const changingHexagram = changingHexagramId ? getHexagram(changingHexagramId, lang) : null;
   const movingLines = completedCastLines.length > 0 ? getMovingLineIndices(completedCastLines) : [];
 
   return (
@@ -112,20 +112,18 @@ export default function HomePage() {
         />
       )}
 
-      {currentStep === "reading-initial" && hexagram && summary && (
+      {currentStep === "reading-initial" && hexagram && (
         <InitialReadingStep
           hexagram={hexagram}
-          summary={summary}
           lines={completedCastLines}
           changingHexagram={changingHexagram}
           onViewDetailed={handleViewDetailed}
         />
       )}
 
-      {currentStep === "reading-detailed" && hexagram && summary && (
+      {currentStep === "reading-detailed" && hexagram && (
         <DetailedReadingStep
           hexagram={hexagram}
-          summary={summary}
           changingHexagramId={changingHexagramId}
           movingLines={movingLines}
           onSaveReading={handleSaveReading}

@@ -2,11 +2,11 @@
 
 import { useTranslation } from "react-i18next";
 import { Card } from "@/components/ui/card";
-import type { HexagramBase } from "@/types/hexagram";
+import type { HexagramView } from "@/content/types";
 import type { LineCast } from "@/types/divination";
 
 interface MovingLinesListProps {
-  hexagram: HexagramBase;
+  hexagram: HexagramView;
   lines: LineCast[];
 }
 

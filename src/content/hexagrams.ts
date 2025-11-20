@@ -17,6 +17,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Pure creative force, initiative, clarity, and leadership.",
       zh: "纯阳之卦，刚健有为，象征创造力、主动性与领导才能。"
     },
+    trigramUpper: {
+      en: "Heaven",
+      zh: "天"
+    },
+    trigramLower: {
+      en: "Heaven",
+      zh: "天"
+    },
+    symbolUpper: "☰",
+    symbolLower: "☰",
     judgement: {
       en: "Great potential and success arise from strong character, persistence, and staying true to your core principles.",
       zh: "元亨利贞。刚健笃实，坚守正道，方能成就大业。"
@@ -109,6 +119,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Receptive earth, support, nurturing, and following the right guidance.",
       zh: "纯阴之卦，柔顺承载，象征大地的包容、承受与滋养之德。"
     },
+    trigramUpper: {
+      en: "Earth",
+      zh: "地"
+    },
+    trigramLower: {
+      en: "Earth",
+      zh: "地"
+    },
+    symbolUpper: "☷",
+    symbolLower: "☷",
     judgement: {
       en: "Great receptivity and benefit come from openness, devotion, and following what is correct.",
       zh: "元亨，利牝马之贞。柔顺而坚守正道，厚德载物，方得亨通。"
@@ -201,6 +221,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Difficulty at the beginning, chaos turning into growth through patience.",
       zh: "始生之难，混沌初开，需耐心经营方能化难为易。"
     },
+    trigramUpper: {
+      en: "Water",
+      zh: "水"
+    },
+    trigramLower: {
+      en: "Thunder",
+      zh: "雷"
+    },
+    symbolUpper: "☵",
+    symbolLower: "☳",
     judgement: {
       en: "Beginnings are full of struggle and confusion, yet they also hold the seed of growth. Move carefully and seek support.",
       zh: "元亨利贞，勿用有攸往，利建侯。开创艰难，宜谨慎求助，稳扎稳打。"
@@ -281,6 +311,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Youthful folly and inexperience requiring education and guidance.",
       zh: "蒙昧无知，需教育启蒙，诚心求教方能开智。"
     },
+    trigramUpper: {
+      en: "Mountain",
+      zh: "山"
+    },
+    trigramLower: {
+      en: "Water",
+      zh: "水"
+    },
+    symbolUpper: "☶",
+    symbolLower: "☵",
     judgement: {
       en: "Success comes not from the teacher seeking the student, but from the student seeking the teacher with sincerity.",
       zh: "亨。匪我求童蒙，童蒙求我。启蒙之道，非师求学生，而是学生求师，诚心方得开悟。"
@@ -361,6 +401,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Waiting and nourishment; patience before the moment of action.",
       zh: "等待时机，涵养待时，耐心中蕴含力量。"
     },
+    trigramUpper: {
+      en: "Water",
+      zh: "水"
+    },
+    trigramLower: {
+      en: "Heaven",
+      zh: "天"
+    },
+    symbolUpper: "☵",
+    symbolLower: "☰",
     judgement: {
       en: "With sincerity and patience, light emerges. Good fortune comes to those who cross great waters at the right time.",
       zh: "有孚，光亨，贞吉，利涉大川。诚心等待，光明亨通，适时渡河方为吉。"
@@ -441,6 +491,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Conflict and contention requiring careful resolution.",
       zh: "争讼纷争，需谨慎化解，过刚则折。"
     },
+    trigramUpper: {
+      en: "Heaven",
+      zh: "天"
+    },
+    trigramLower: {
+      en: "Water",
+      zh: "水"
+    },
+    symbolUpper: "☰",
+    symbolLower: "☵",
     judgement: {
       en: "You are sincere but obstructed. Careful deliberation brings good fortune. Going to the end brings misfortune.",
       zh: "有孚，窒惕，中吉，终凶。虽有诚信却受阻，中途和解则吉，坚持到底则凶。"
@@ -521,6 +581,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "The army; discipline, leadership, and collective effort.",
       zh: "军旅之象，纪律严明，领导有方。"
     },
+    trigramUpper: {
+      en: "Earth",
+      zh: "地"
+    },
+    trigramLower: {
+      en: "Water",
+      zh: "水"
+    },
+    symbolUpper: "☷",
+    symbolLower: "☵",
     judgement: {
       en: "With the right leader and proper cause, there is no blame. Discipline and experience are essential.",
       zh: "贞，丈人吉，无咎。有贤明统帅，师出有名，则无咎。"
@@ -601,6 +671,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Holding together, alliance, and seeking unity.",
       zh: "亲比团结，寻求联盟，诚信为本。"
     },
+    trigramUpper: {
+      en: "Water",
+      zh: "水"
+    },
+    trigramLower: {
+      en: "Earth",
+      zh: "地"
+    },
+    symbolUpper: "☵",
+    symbolLower: "☷",
     judgement: {
       en: "Good fortune through unity. Ask the oracle again: do you have constancy and sincerity? Late arrivals meet misfortune.",
       zh: "吉。原筮，元永贞，无咎。以诚信团结则吉，迟来者遇凶。"
@@ -681,6 +761,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Small taming; gentle restraint and accumulation.",
       zh: "小有积蓄，柔以畜刚，渐进累积。"
     },
+    trigramUpper: {
+      en: "Wind",
+      zh: "风"
+    },
+    trigramLower: {
+      en: "Heaven",
+      zh: "天"
+    },
+    symbolUpper: "☴",
+    symbolLower: "☰",
     judgement: {
       en: "Success through gentle influence. Dense clouds but no rain from the western region.",
       zh: "亨。密云不雨，自我西郊。通过温和影响获得成功。"
@@ -761,6 +851,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Treading carefully; conduct and proper behavior.",
       zh: "小心履行，谨慎行事，以礼待人。"
     },
+    trigramUpper: {
+      en: "Heaven",
+      zh: "天"
+    },
+    trigramLower: {
+      en: "Lake",
+      zh: "泽"
+    },
+    symbolUpper: "☰",
+    symbolLower: "☱",
     judgement: {
       en: "Treading on the tiger's tail without being bitten. Success through care and respect.",
       zh: "履虎尾，不咥人，亨。如履虎尾而不被咬，因谨慎恭敬而获成功。"
@@ -841,6 +941,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Peace and prosperity; heaven and earth in harmony.",
       zh: "天地交泰，通达和顺，万事亨通。"
     },
+    trigramUpper: {
+      en: "Earth",
+      zh: "地"
+    },
+    trigramLower: {
+      en: "Heaven",
+      zh: "天"
+    },
+    symbolUpper: "☷",
+    symbolLower: "☰",
     judgement: {
       en: "The small departs, the great approaches. Good fortune and success through proper timing.",
       zh: "小往大来，吉亨。小人退，大人进，吉祥亨通。"
@@ -921,6 +1031,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Standstill and stagnation; heaven and earth not communicating.",
       zh: "天地不交，闭塞不通，小人道长。"
     },
+    trigramUpper: {
+      en: "Heaven",
+      zh: "天"
+    },
+    trigramLower: {
+      en: "Earth",
+      zh: "地"
+    },
+    symbolUpper: "☰",
+    symbolLower: "☷",
     judgement: {
       en: "Standstill caused by wrong people. The wise person's persistence does not further things now.",
       zh: "否之匪人，不利君子贞。小人当道，君子守正不宜妄动。"
@@ -1001,6 +1121,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Fellowship with others; community and shared purpose.",
       zh: "与人和同，志同道合，共同事业。"
     },
+    trigramUpper: {
+      en: "Heaven",
+      zh: "天"
+    },
+    trigramLower: {
+      en: "Fire",
+      zh: "火"
+    },
+    symbolUpper: "☰",
+    symbolLower: "☲",
     judgement: {
       en: "Fellowship in the open brings success. It furthers one to cross the great water. The perseverance of a noble person brings fortune.",
       zh: "同人于野，亨。利涉大川，利君子贞。与人和同于广阔天地，亨通。"
@@ -1081,6 +1211,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Great possession and abundance through virtue.",
       zh: "大有收获，丰盛富足，德行所致。"
     },
+    trigramUpper: {
+      en: "Fire",
+      zh: "火"
+    },
+    trigramLower: {
+      en: "Heaven",
+      zh: "天"
+    },
+    symbolUpper: "☲",
+    symbolLower: "☰",
     judgement: {
       en: "Supreme success through clarity and strength combined.",
       zh: "元亨。通过明智与刚强结合获得极大成功。"
@@ -1161,6 +1301,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Modesty and humility; the virtue that levels mountains.",
       zh: "谦逊美德，低处高山，得道多助。"
     },
+    trigramUpper: {
+      en: "Earth",
+      zh: "地"
+    },
+    trigramLower: {
+      en: "Mountain",
+      zh: "山"
+    },
+    symbolUpper: "☷",
+    symbolLower: "☶",
     judgement: {
       en: "Modesty creates success. The wise may carry things through.",
       zh: "亨，君子有终。谦逊创造成功，君子善始善终。"
@@ -1241,6 +1391,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Enthusiasm and harmony; providing for joy.",
       zh: "和乐喜悦，顺势而为，提前准备。"
     },
+    trigramUpper: {
+      en: "Thunder",
+      zh: "雷"
+    },
+    trigramLower: {
+      en: "Earth",
+      zh: "地"
+    },
+    symbolUpper: "☳",
+    symbolLower: "☷",
     judgement: {
       en: "It furthers one to install helpers and to set armies marching.",
       zh: "利建侯行师。利于建立诸侯，出兵作战。"
@@ -1321,6 +1481,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Following and adaptation; finding the right path.",
       zh: "随顺跟随，因时制宜，顺应自然。"
     },
+    trigramUpper: {
+      en: "Lake",
+      zh: "泽"
+    },
+    trigramLower: {
+      en: "Thunder",
+      zh: "雷"
+    },
+    symbolUpper: "☱",
+    symbolLower: "☳",
     judgement: {
       en: "Supreme success. Perseverance furthers. No blame.",
       zh: "元亨，利贞，无咎。大亨通，守正无咎。"
@@ -1401,6 +1571,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Work on what has been spoiled; decay and renewal.",
       zh: "整治腐败，拨乱反正，革新图强。"
     },
+    trigramUpper: {
+      en: "Mountain",
+      zh: "山"
+    },
+    trigramLower: {
+      en: "Wind",
+      zh: "风"
+    },
+    symbolUpper: "☶",
+    symbolLower: "☴",
     judgement: {
       en: "Supreme success. It furthers one to cross the great water. Before the starting point, three days. After the starting point, three days.",
       zh: "元亨，利涉大川。先甲三日，后甲三日。大亨通，利涉险，行事需前后谋划。"
@@ -1481,6 +1661,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Approach and leadership; drawing near.",
       zh: "君临天下，以德服人，恩威并施。"
     },
+    trigramUpper: {
+      en: "Earth",
+      zh: "地"
+    },
+    trigramLower: {
+      en: "Lake",
+      zh: "泽"
+    },
+    symbolUpper: "☷",
+    symbolLower: "☱",
     judgement: {
       en: "Supreme success. Perseverance furthers. When the eighth month comes, there will be misfortune.",
       zh: "元亨，利贞。至于八月有凶。大亨通利守正，八月将有变故。"
@@ -1561,6 +1751,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Contemplation and observation; looking down with clarity.",
       zh: "观察审视，洞察万物，以身示范。"
     },
+    trigramUpper: {
+      en: "Wind",
+      zh: "风"
+    },
+    trigramLower: {
+      en: "Earth",
+      zh: "地"
+    },
+    symbolUpper: "☴",
+    symbolLower: "☷",
     judgement: {
       en: "The ablution has been made, but not yet the offering. Full of trust they look up to him.",
       zh: "盥而不荐，有孚颙若。洗手礼拜未献祭，诚信令人敬仰。"
@@ -1642,6 +1842,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Biting Through. (Detailed translation to be added)",
       zh: "咬合突破。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Fire",
+      zh: "火"
+    },
+    trigramLower: {
+      en: "Thunder",
+      zh: "雷"
+    },
+    symbolUpper: "☲",
+    symbolLower: "☳",
     judgement: {
       en: "Judgement text for Hexagram 21 to be added.",
       zh: "第21卦卦辞待补充。"
@@ -1715,6 +1925,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Grace. (Detailed translation to be added)",
       zh: "文饰优雅。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Mountain",
+      zh: "山"
+    },
+    trigramLower: {
+      en: "Fire",
+      zh: "火"
+    },
+    symbolUpper: "☶",
+    symbolLower: "☲",
     judgement: {
       en: "Judgement text for Hexagram 22 to be added.",
       zh: "第22卦卦辞待补充。"
@@ -1788,6 +2008,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Splitting Apart. (Detailed translation to be added)",
       zh: "剥落分离。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Mountain",
+      zh: "山"
+    },
+    trigramLower: {
+      en: "Earth",
+      zh: "地"
+    },
+    symbolUpper: "☶",
+    symbolLower: "☷",
     judgement: {
       en: "Judgement text for Hexagram 23 to be added.",
       zh: "第23卦卦辞待补充。"
@@ -1861,6 +2091,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Return. (Detailed translation to be added)",
       zh: "复归返回。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Earth",
+      zh: "地"
+    },
+    trigramLower: {
+      en: "Thunder",
+      zh: "雷"
+    },
+    symbolUpper: "☷",
+    symbolLower: "☳",
     judgement: {
       en: "Judgement text for Hexagram 24 to be added.",
       zh: "第24卦卦辞待补充。"
@@ -1934,6 +2174,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Innocence. (Detailed translation to be added)",
       zh: "无妄真诚。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Heaven",
+      zh: "天"
+    },
+    trigramLower: {
+      en: "Thunder",
+      zh: "雷"
+    },
+    symbolUpper: "☰",
+    symbolLower: "☳",
     judgement: {
       en: "Judgement text for Hexagram 25 to be added.",
       zh: "第25卦卦辞待补充。"
@@ -2007,6 +2257,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Great Taming. (Detailed translation to be added)",
       zh: "大畜积蓄。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Mountain",
+      zh: "山"
+    },
+    trigramLower: {
+      en: "Heaven",
+      zh: "天"
+    },
+    symbolUpper: "☶",
+    symbolLower: "☰",
     judgement: {
       en: "Judgement text for Hexagram 26 to be added.",
       zh: "第26卦卦辞待补充。"
@@ -2080,6 +2340,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Nourishment. (Detailed translation to be added)",
       zh: "颐养滋养。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Mountain",
+      zh: "山"
+    },
+    trigramLower: {
+      en: "Thunder",
+      zh: "雷"
+    },
+    symbolUpper: "☶",
+    symbolLower: "☳",
     judgement: {
       en: "Judgement text for Hexagram 27 to be added.",
       zh: "第27卦卦辞待补充。"
@@ -2153,6 +2423,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Great Exceeding. (Detailed translation to be added)",
       zh: "大过超越。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Lake",
+      zh: "泽"
+    },
+    trigramLower: {
+      en: "Wind",
+      zh: "风"
+    },
+    symbolUpper: "☱",
+    symbolLower: "☴",
     judgement: {
       en: "Judgement text for Hexagram 28 to be added.",
       zh: "第28卦卦辞待补充。"
@@ -2226,6 +2506,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "The Abysmal Water. (Detailed translation to be added)",
       zh: "坎陷危险。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Water",
+      zh: "水"
+    },
+    trigramLower: {
+      en: "Water",
+      zh: "水"
+    },
+    symbolUpper: "☵",
+    symbolLower: "☵",
     judgement: {
       en: "Judgement text for Hexagram 29 to be added.",
       zh: "第29卦卦辞待补充。"
@@ -2299,6 +2589,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "The Clinging Fire. (Detailed translation to be added)",
       zh: "离附依附。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Fire",
+      zh: "火"
+    },
+    trigramLower: {
+      en: "Fire",
+      zh: "火"
+    },
+    symbolUpper: "☲",
+    symbolLower: "☲",
     judgement: {
       en: "Judgement text for Hexagram 30 to be added.",
       zh: "第30卦卦辞待补充。"
@@ -2372,6 +2672,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Influence. (Detailed translation to be added)",
       zh: "感应交感。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Lake",
+      zh: "泽"
+    },
+    trigramLower: {
+      en: "Mountain",
+      zh: "山"
+    },
+    symbolUpper: "☱",
+    symbolLower: "☶",
     judgement: {
       en: "Judgement text for Hexagram 31 to be added.",
       zh: "第31卦卦辞待补充。"
@@ -2445,6 +2755,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Duration. (Detailed translation to be added)",
       zh: "恒久持续。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Thunder",
+      zh: "雷"
+    },
+    trigramLower: {
+      en: "Wind",
+      zh: "风"
+    },
+    symbolUpper: "☳",
+    symbolLower: "☴",
     judgement: {
       en: "Judgement text for Hexagram 32 to be added.",
       zh: "第32卦卦辞待补充。"
@@ -2518,6 +2838,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Retreat. (Detailed translation to be added)",
       zh: "遁退隐退。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Heaven",
+      zh: "天"
+    },
+    trigramLower: {
+      en: "Mountain",
+      zh: "山"
+    },
+    symbolUpper: "☰",
+    symbolLower: "☶",
     judgement: {
       en: "Judgement text for Hexagram 33 to be added.",
       zh: "第33卦卦辞待补充。"
@@ -2591,6 +2921,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Great Power. (Detailed translation to be added)",
       zh: "大壮强盛。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Thunder",
+      zh: "雷"
+    },
+    trigramLower: {
+      en: "Heaven",
+      zh: "天"
+    },
+    symbolUpper: "☳",
+    symbolLower: "☰",
     judgement: {
       en: "Judgement text for Hexagram 34 to be added.",
       zh: "第34卦卦辞待补充。"
@@ -2664,6 +3004,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Progress. (Detailed translation to be added)",
       zh: "晋升进步。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Fire",
+      zh: "火"
+    },
+    trigramLower: {
+      en: "Earth",
+      zh: "地"
+    },
+    symbolUpper: "☲",
+    symbolLower: "☷",
     judgement: {
       en: "Judgement text for Hexagram 35 to be added.",
       zh: "第35卦卦辞待补充。"
@@ -2737,6 +3087,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Darkening of Light. (Detailed translation to be added)",
       zh: "明夷光明受伤。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Earth",
+      zh: "地"
+    },
+    trigramLower: {
+      en: "Fire",
+      zh: "火"
+    },
+    symbolUpper: "☷",
+    symbolLower: "☲",
     judgement: {
       en: "Judgement text for Hexagram 36 to be added.",
       zh: "第36卦卦辞待补充。"
@@ -2810,6 +3170,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Family. (Detailed translation to be added)",
       zh: "家人家庭。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Wind",
+      zh: "风"
+    },
+    trigramLower: {
+      en: "Fire",
+      zh: "火"
+    },
+    symbolUpper: "☴",
+    symbolLower: "☲",
     judgement: {
       en: "Judgement text for Hexagram 37 to be added.",
       zh: "第37卦卦辞待补充。"
@@ -2883,6 +3253,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Opposition. (Detailed translation to be added)",
       zh: "睽乖背离。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Fire",
+      zh: "火"
+    },
+    trigramLower: {
+      en: "Lake",
+      zh: "泽"
+    },
+    symbolUpper: "☲",
+    symbolLower: "☱",
     judgement: {
       en: "Judgement text for Hexagram 38 to be added.",
       zh: "第38卦卦辞待补充。"
@@ -2956,6 +3336,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Obstruction. (Detailed translation to be added)",
       zh: "蹇难阻碍。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Water",
+      zh: "水"
+    },
+    trigramLower: {
+      en: "Mountain",
+      zh: "山"
+    },
+    symbolUpper: "☵",
+    symbolLower: "☶",
     judgement: {
       en: "Judgement text for Hexagram 39 to be added.",
       zh: "第39卦卦辞待补充。"
@@ -3029,6 +3419,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Deliverance. (Detailed translation to be added)",
       zh: "解脱解除。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Thunder",
+      zh: "雷"
+    },
+    trigramLower: {
+      en: "Water",
+      zh: "水"
+    },
+    symbolUpper: "☳",
+    symbolLower: "☵",
     judgement: {
       en: "Judgement text for Hexagram 40 to be added.",
       zh: "第40卦卦辞待补充。"
@@ -3102,6 +3502,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Decrease. (Detailed translation to be added)",
       zh: "损减损失。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Mountain",
+      zh: "山"
+    },
+    trigramLower: {
+      en: "Lake",
+      zh: "泽"
+    },
+    symbolUpper: "☶",
+    symbolLower: "☱",
     judgement: {
       en: "Judgement text for Hexagram 41 to be added.",
       zh: "第41卦卦辞待补充。"
@@ -3175,6 +3585,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Increase. (Detailed translation to be added)",
       zh: "益增加增。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Wind",
+      zh: "风"
+    },
+    trigramLower: {
+      en: "Thunder",
+      zh: "雷"
+    },
+    symbolUpper: "☴",
+    symbolLower: "☳",
     judgement: {
       en: "Judgement text for Hexagram 42 to be added.",
       zh: "第42卦卦辞待补充。"
@@ -3248,6 +3668,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Breakthrough. (Detailed translation to be added)",
       zh: "夬决突破。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Lake",
+      zh: "泽"
+    },
+    trigramLower: {
+      en: "Heaven",
+      zh: "天"
+    },
+    symbolUpper: "☱",
+    symbolLower: "☰",
     judgement: {
       en: "Judgement text for Hexagram 43 to be added.",
       zh: "第43卦卦辞待补充。"
@@ -3321,6 +3751,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Coming to Meet. (Detailed translation to be added)",
       zh: "姤遇相遇。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Heaven",
+      zh: "天"
+    },
+    trigramLower: {
+      en: "Wind",
+      zh: "风"
+    },
+    symbolUpper: "☰",
+    symbolLower: "☴",
     judgement: {
       en: "Judgement text for Hexagram 44 to be added.",
       zh: "第44卦卦辞待补充。"
@@ -3394,6 +3834,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Gathering Together. (Detailed translation to be added)",
       zh: "萃聚集。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Lake",
+      zh: "泽"
+    },
+    trigramLower: {
+      en: "Earth",
+      zh: "地"
+    },
+    symbolUpper: "☱",
+    symbolLower: "☷",
     judgement: {
       en: "Judgement text for Hexagram 45 to be added.",
       zh: "第45卦卦辞待补充。"
@@ -3467,6 +3917,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Pushing Upward. (Detailed translation to be added)",
       zh: "升上升。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Earth",
+      zh: "地"
+    },
+    trigramLower: {
+      en: "Wind",
+      zh: "风"
+    },
+    symbolUpper: "☷",
+    symbolLower: "☴",
     judgement: {
       en: "Judgement text for Hexagram 46 to be added.",
       zh: "第46卦卦辞待补充。"
@@ -3540,6 +4000,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Oppression. (Detailed translation to be added)",
       zh: "困穷困。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Lake",
+      zh: "泽"
+    },
+    trigramLower: {
+      en: "Water",
+      zh: "水"
+    },
+    symbolUpper: "☱",
+    symbolLower: "☵",
     judgement: {
       en: "Judgement text for Hexagram 47 to be added.",
       zh: "第47卦卦辞待补充。"
@@ -3613,6 +4083,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "The Well. (Detailed translation to be added)",
       zh: "井水井。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Water",
+      zh: "水"
+    },
+    trigramLower: {
+      en: "Wind",
+      zh: "风"
+    },
+    symbolUpper: "☵",
+    symbolLower: "☴",
     judgement: {
       en: "Judgement text for Hexagram 48 to be added.",
       zh: "第48卦卦辞待补充。"
@@ -3686,6 +4166,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Revolution. (Detailed translation to be added)",
       zh: "革变革。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Lake",
+      zh: "泽"
+    },
+    trigramLower: {
+      en: "Fire",
+      zh: "火"
+    },
+    symbolUpper: "☱",
+    symbolLower: "☲",
     judgement: {
       en: "Judgement text for Hexagram 49 to be added.",
       zh: "第49卦卦辞待补充。"
@@ -3759,6 +4249,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "The Cauldron. (Detailed translation to be added)",
       zh: "鼎鼎器。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Fire",
+      zh: "火"
+    },
+    trigramLower: {
+      en: "Wind",
+      zh: "风"
+    },
+    symbolUpper: "☲",
+    symbolLower: "☴",
     judgement: {
       en: "Judgement text for Hexagram 50 to be added.",
       zh: "第50卦卦辞待补充。"
@@ -3832,6 +4332,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Arousing Thunder. (Detailed translation to be added)",
       zh: "震震动。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Thunder",
+      zh: "雷"
+    },
+    trigramLower: {
+      en: "Thunder",
+      zh: "雷"
+    },
+    symbolUpper: "☳",
+    symbolLower: "☳",
     judgement: {
       en: "Judgement text for Hexagram 51 to be added.",
       zh: "第51卦卦辞待补充。"
@@ -3905,6 +4415,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Keeping Still. (Detailed translation to be added)",
       zh: "艮止静止。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Mountain",
+      zh: "山"
+    },
+    trigramLower: {
+      en: "Mountain",
+      zh: "山"
+    },
+    symbolUpper: "☶",
+    symbolLower: "☶",
     judgement: {
       en: "Judgement text for Hexagram 52 to be added.",
       zh: "第52卦卦辞待补充。"
@@ -3978,6 +4498,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Development. (Detailed translation to be added)",
       zh: "渐进渐进。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Wind",
+      zh: "风"
+    },
+    trigramLower: {
+      en: "Mountain",
+      zh: "山"
+    },
+    symbolUpper: "☴",
+    symbolLower: "☶",
     judgement: {
       en: "Judgement text for Hexagram 53 to be added.",
       zh: "第53卦卦辞待补充。"
@@ -4051,6 +4581,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Marrying Maiden. (Detailed translation to be added)",
       zh: "归妹出嫁。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Thunder",
+      zh: "雷"
+    },
+    trigramLower: {
+      en: "Lake",
+      zh: "泽"
+    },
+    symbolUpper: "☳",
+    symbolLower: "☱",
     judgement: {
       en: "Judgement text for Hexagram 54 to be added.",
       zh: "第54卦卦辞待补充。"
@@ -4124,6 +4664,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Abundance. (Detailed translation to be added)",
       zh: "丰丰盛。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Thunder",
+      zh: "雷"
+    },
+    trigramLower: {
+      en: "Fire",
+      zh: "火"
+    },
+    symbolUpper: "☳",
+    symbolLower: "☲",
     judgement: {
       en: "Judgement text for Hexagram 55 to be added.",
       zh: "第55卦卦辞待补充。"
@@ -4197,6 +4747,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "The Wanderer. (Detailed translation to be added)",
       zh: "旅旅行。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Fire",
+      zh: "火"
+    },
+    trigramLower: {
+      en: "Mountain",
+      zh: "山"
+    },
+    symbolUpper: "☲",
+    symbolLower: "☶",
     judgement: {
       en: "Judgement text for Hexagram 56 to be added.",
       zh: "第56卦卦辞待补充。"
@@ -4270,6 +4830,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Gentle Wind. (Detailed translation to be added)",
       zh: "巽顺巽逊。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Wind",
+      zh: "风"
+    },
+    trigramLower: {
+      en: "Wind",
+      zh: "风"
+    },
+    symbolUpper: "☴",
+    symbolLower: "☴",
     judgement: {
       en: "Judgement text for Hexagram 57 to be added.",
       zh: "第57卦卦辞待补充。"
@@ -4343,6 +4913,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Joyous Lake. (Detailed translation to be added)",
       zh: "兑喜悦。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Lake",
+      zh: "泽"
+    },
+    trigramLower: {
+      en: "Lake",
+      zh: "泽"
+    },
+    symbolUpper: "☱",
+    symbolLower: "☱",
     judgement: {
       en: "Judgement text for Hexagram 58 to be added.",
       zh: "第58卦卦辞待补充。"
@@ -4416,6 +4996,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Dispersion. (Detailed translation to be added)",
       zh: "涣散涣散。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Wind",
+      zh: "风"
+    },
+    trigramLower: {
+      en: "Water",
+      zh: "水"
+    },
+    symbolUpper: "☴",
+    symbolLower: "☵",
     judgement: {
       en: "Judgement text for Hexagram 59 to be added.",
       zh: "第59卦卦辞待补充。"
@@ -4489,6 +5079,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Limitation. (Detailed translation to be added)",
       zh: "节制节制。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Water",
+      zh: "水"
+    },
+    trigramLower: {
+      en: "Lake",
+      zh: "泽"
+    },
+    symbolUpper: "☵",
+    symbolLower: "☱",
     judgement: {
       en: "Judgement text for Hexagram 60 to be added.",
       zh: "第60卦卦辞待补充。"
@@ -4562,6 +5162,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Inner Truth. (Detailed translation to be added)",
       zh: "中孚诚信。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Wind",
+      zh: "风"
+    },
+    trigramLower: {
+      en: "Lake",
+      zh: "泽"
+    },
+    symbolUpper: "☴",
+    symbolLower: "☱",
     judgement: {
       en: "Judgement text for Hexagram 61 to be added.",
       zh: "第61卦卦辞待补充。"
@@ -4635,6 +5245,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Small Exceeding. (Detailed translation to be added)",
       zh: "小过小过。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Thunder",
+      zh: "雷"
+    },
+    trigramLower: {
+      en: "Mountain",
+      zh: "山"
+    },
+    symbolUpper: "☳",
+    symbolLower: "☶",
     judgement: {
       en: "Judgement text for Hexagram 62 to be added.",
       zh: "第62卦卦辞待补充。"
@@ -4708,6 +5328,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "After Completion. (Detailed translation to be added)",
       zh: "既济已成。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Water",
+      zh: "水"
+    },
+    trigramLower: {
+      en: "Fire",
+      zh: "火"
+    },
+    symbolUpper: "☵",
+    symbolLower: "☲",
     judgement: {
       en: "Judgement text for Hexagram 63 to be added.",
       zh: "第63卦卦辞待补充。"
@@ -4781,6 +5411,16 @@ export const hexagramContents: HexagramContent[] = [
       en: "Before Completion. (Detailed translation to be added)",
       zh: "未济未成。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "Fire",
+      zh: "火"
+    },
+    trigramLower: {
+      en: "Water",
+      zh: "水"
+    },
+    symbolUpper: "☲",
+    symbolLower: "☵",
     judgement: {
       en: "Judgement text for Hexagram 64 to be added.",
       zh: "第64卦卦辞待补充。"

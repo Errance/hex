@@ -1,11 +1,11 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import type { HexagramBase } from "@/types/hexagram";
+import type { HexagramView } from "@/content/types";
 import type { LineCast } from "@/types/divination";
 
 interface HexagramDiagramProps {
-  hexagram: HexagramBase;
+  hexagram: HexagramView;
   lines: LineCast[];
 }
 

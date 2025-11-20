@@ -1,6 +1,6 @@
 // src/types/divination.ts
 
-import type { HexagramBase } from "./hexagram";
+import type { HexagramView } from "@/content/types";
 
 export type CastMethod = "coins-auto" | "coins-manual";
 
@@ -57,7 +57,7 @@ export type InterpretRequest = {
   language?: string; // 'en' or 'zh'
   context: {
     baseHexagram: Pick<
-      HexagramBase,
+      HexagramView,
       "name" | "nameZh" | "descriptionShort" | "judgement" | "imageText" | "lines"
     >;
     initialSummary: string;

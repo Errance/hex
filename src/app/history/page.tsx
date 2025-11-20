@@ -16,11 +16,12 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { getHexagramById, getHexagramSummary } from "@/lib/hexagram-utils";
+import { getHexagram } from "@/content/utils";
+import { useI18n } from "@/lib/i18n/useI18n";
 import type { DivinationRecord } from "@/types/divination";
 
 export default function HistoryPage() {
-  const { t } = useTranslation();
+  const { t, lang } = useI18n();
   const { history } = useAppStore();
   const [selectedRecord, setSelectedRecord] = useState<DivinationRecord | null>(null);
 
@@ -33,13 +34,11 @@ export default function HistoryPage() {
   };
 
   const hexagram = selectedRecord
-    ? getHexagramById(selectedRecord.castResult.baseHexagramId)
+    ? getHexagram(selectedRecord.castResult.baseHexagramId, lang)
     : null;
-  const summary = selectedRecord
-    ? getHexagramSummary(selectedRecord.castResult.baseHexagramId)
-    : null;
+  
   const changingHexagram = selectedRecord?.castResult.changingHexagramId
-    ? getHexagramById(selectedRecord.castResult.changingHexagramId)
+    ? getHexagram(selectedRecord.castResult.changingHexagramId, lang)
     : null;
 
   return (
@@ -56,7 +55,7 @@ export default function HistoryPage() {
       {/* Detail Dialog */}
       <Dialog open={!!selectedRecord} onOpenChange={handleCloseDetail}>
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-          {selectedRecord && hexagram && summary && (
+          {selectedRecord && hexagram && (
             <div className="space-y-6">
               <DialogHeader>
                 <DialogTitle className="text-2xl font-serif">
@@ -103,7 +102,7 @@ export default function HistoryPage() {
               />
 
               {/* Initial Interpretation */}
-              <InitialInterpretation summary={summary} />
+              <InitialInterpretation summary={hexagram.summary} />
 
               {/* AI Interpretation */}
               {selectedRecord.aiInterpretation && (

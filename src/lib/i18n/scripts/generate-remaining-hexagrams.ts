@@ -3,6 +3,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import { HEXAGRAM_TRIGRAMS, TRIGRAMS } from '../../../content/trigrams';
 
 const OUTPUT_FILE = path.join(__dirname, '../../../content/hexagrams-full.ts');
 
@@ -55,6 +56,11 @@ const hexagramInfo = [
 ];
 
 function generateHexagram(info: typeof hexagramInfo[0]): string {
+  // Get trigram info
+  const trigramIds = HEXAGRAM_TRIGRAMS[info.id];
+  const upper = TRIGRAMS[trigramIds.upper];
+  const lower = TRIGRAMS[trigramIds.lower];
+
   return `  {
     id: ${info.id},
     name: {
@@ -67,6 +73,16 @@ function generateHexagram(info: typeof hexagramInfo[0]): string {
       en: "${info.descEn}. (Detailed translation to be added)",
       zh: "${info.descZh}。（详细内容待补充）"
     },
+    trigramUpper: {
+      en: "${upper.name.en}",
+      zh: "${upper.name.zh}"
+    },
+    trigramLower: {
+      en: "${lower.name.en}",
+      zh: "${lower.name.zh}"
+    },
+    symbolUpper: "${upper.symbol}",
+    symbolLower: "${lower.symbol}",
     judgement: {
       en: "Judgement text for Hexagram ${info.id} to be added.",
       zh: "第${info.id}卦卦辞待补充。"
@@ -174,4 +190,3 @@ try {
   console.error('❌ Generation failed:', error);
   process.exit(1);
 }
-

@@ -1,16 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { DetailedInterpretation } from "../reading/DetailedInterpretation";
 import type { AiInterpretation, InterpretRequest } from "@/types/divination";
-import type { HexagramBase, HexagramInitialSummary } from "@/types/hexagram";
+import type { HexagramView } from "@/content/types";
+import { useI18n } from "@/lib/i18n/useI18n";
 
 interface DetailedReadingStepProps {
-  hexagram: HexagramBase;
-  summary: HexagramInitialSummary;
+  hexagram: HexagramView;
   changingHexagramId?: number | null;
   movingLines: number[];
   onSaveReading: (question: string, interpretation: AiInterpretation) => void;
@@ -18,12 +17,11 @@ interface DetailedReadingStepProps {
 
 export function DetailedReadingStep({
   hexagram,
-  summary,
   changingHexagramId,
   movingLines,
   onSaveReading,
 }: DetailedReadingStepProps) {
-  const { t, i18n } = useTranslation();
+  const { t, lang } = useI18n();
   const [question, setQuestion] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [interpretation, setInterpretation] = useState<AiInterpretation | null>(null);
@@ -46,7 +44,7 @@ export function DetailedReadingStep({
         changingHexagramId,
         movingLines,
         question: question.trim(),
-        language: i18n.language, // Add language to API request
+        language: lang, // Add language to API request
         context: {
           baseHexagram: {
             name: hexagram.name,
@@ -56,7 +54,7 @@ export function DetailedReadingStep({
             imageText: hexagram.imageText,
             lines: hexagram.lines,
           },
-          initialSummary: summary.general.summary,
+          initialSummary: hexagram.summary.general,
         },
       };
 

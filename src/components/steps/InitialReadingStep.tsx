@@ -1,30 +1,28 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+import { useI18n } from "@/lib/i18n/useI18n";
 import { Button } from "@/components/ui/button";
 import { HexagramDiagram } from "../reading/HexagramDiagram";
 import { HexagramSummaryCard } from "../reading/HexagramSummaryCard";
 import { MovingLinesList } from "../reading/MovingLinesList";
 import { InitialInterpretation } from "../reading/InitialInterpretation";
-import type { HexagramBase, HexagramInitialSummary } from "@/types/hexagram";
+import type { HexagramView } from "@/content/types";
 import type { LineCast } from "@/types/divination";
 
 interface InitialReadingStepProps {
-  hexagram: HexagramBase;
-  summary: HexagramInitialSummary;
+  hexagram: HexagramView;
   lines: LineCast[];
-  changingHexagram?: HexagramBase | null;
+  changingHexagram?: HexagramView | null;
   onViewDetailed: () => void;
 }
 
 export function InitialReadingStep({
   hexagram,
-  summary,
   lines,
   changingHexagram,
   onViewDetailed,
 }: InitialReadingStepProps) {
-  const { t } = useTranslation();
+  const { t } = useI18n();
   
   return (
     <div className="max-w-4xl mx-auto space-y-8">
@@ -62,7 +60,7 @@ export function InitialReadingStep({
       )}
 
       {/* Initial Interpretation */}
-      <InitialInterpretation summary={summary} />
+      <InitialInterpretation summary={hexagram.summary} />
 
       {/* CTA for Detailed Reading */}
       <div className="text-center pt-6 space-y-4">

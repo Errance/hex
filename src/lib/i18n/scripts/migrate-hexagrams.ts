@@ -3,6 +3,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import { HEXAGRAM_TRIGRAMS, TRIGRAMS } from '../../../content/trigrams';
 
 const ROOT_DIR = path.join(__dirname, '../../..');
 const OLD_EN_HEXAGRAMS = path.join(ROOT_DIR, 'lib/i18n/locales/en/hexagrams.json');
@@ -105,6 +106,11 @@ export const hexagramContents: HexagramContent[] = [\n`;
       continue;
     }
     
+    // Get trigram info
+    const trigramIds = HEXAGRAM_TRIGRAMS[enHex.id];
+    const upper = TRIGRAMS[trigramIds.upper];
+    const lower = TRIGRAMS[trigramIds.lower];
+
     // Generate default summaries if missing
     if (!enSum) {
       enSum = {
@@ -142,6 +148,19 @@ export const hexagramContents: HexagramContent[] = [\n`;
     output += `      en: "${escapeString(enHex.descriptionShort)}",\n`;
     output += `      zh: "${escapeString(zhHex.descriptionShort)}"\n`;
     output += `    },\n`;
+
+    // Add Trigram/Symbol Info
+    output += `    trigramUpper: {\n`;
+    output += `      en: "${upper.name.en}",\n`;
+    output += `      zh: "${upper.name.zh}"\n`;
+    output += `    },\n`;
+    output += `    trigramLower: {\n`;
+    output += `      en: "${lower.name.en}",\n`;
+    output += `      zh: "${lower.name.zh}"\n`;
+    output += `    },\n`;
+    output += `    symbolUpper: "${upper.symbol}",\n`;
+    output += `    symbolLower: "${lower.symbol}",\n`;
+
     output += `    judgement: {\n`;
     output += `      en: "${escapeString(enHex.judgement)}",\n`;
     output += `      zh: "${escapeString(zhHex.judgement)}"\n`;
@@ -252,4 +271,3 @@ try {
   console.error('❌ Migration failed:', error);
   process.exit(1);
 }
-
