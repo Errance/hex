@@ -1,0 +1,147 @@
+{
+  "app": {
+    "title": "Hex Oracle",
+    "subtitle": "I Ching Divination",
+    "tagline": "Ancient Wisdom for Modern Seekers"
+  },
+  "nav": {
+    "history": "History",
+    "language": "Language"
+  },
+  "theme": {
+    "zen": "Zen",
+    "fengshui": "Fengshui"
+  },
+  "intro": {
+    "title": "Ask the Oracle",
+    "subtitle": "易经占卜 • Ancient Wisdom for Modern Seekers",
+    "howItWorks": "How It Works",
+    "step1": {
+      "title": "Focus on your question.",
+      "desc": "Hold it silently in your mind as you prepare to cast."
+    },
+    "step2": {
+      "title": "Cast the coins.",
+      "desc": "Use three ancient coins to generate six lines, forming your hexagram."
+    },
+    "step3": {
+      "title": "Receive guidance.",
+      "desc": "Get an initial reading and unlock deeper insights."
+    },
+    "beginButton": "Begin Casting",
+    "description": "The I Ching (Yijing) has guided seekers for over 3,000 years.",
+    "description2": "Let its ancient wisdom illuminate your path forward."
+  },
+  "cast": {
+    "title": "Cast Your Hexagram",
+    "subtitle": "Focus on your question as the coins are thrown",
+    "chooseMethod": "Choose Casting Method",
+    "autoMode": {
+      "title": "Auto Cast",
+      "desc": "Cast all six lines at once automatically"
+    },
+    "manualMode": {
+      "title": "Manual Cast",
+      "desc": "Cast one line at a time with each shake"
+    },
+    "animation": {
+      "title": "Animation",
+      "enabled": "Show coin animation",
+      "disabled": "Fast mode (no animation)",
+      "btnEnabled": "Enabled",
+      "btnDisabled": "Disabled"
+    },
+    "progress": "Progress",
+    "coinsPlaceholder": "Coins will appear here during casting",
+    "hexagramPlaceholder": "Your hexagram will form here",
+    "castAllButton": "Cast All Lines",
+    "casting": "Casting...",
+    "shakeFirst": "Shake for First Line",
+    "shakeLine": "Shake for Line {{line}}",
+    "shaking": "Shaking...",
+    "complete": "Hexagram complete! Preparing your reading..."
+  },
+  "hexagram": {
+    "over": "over",
+    "movingLinesLabel": "Moving line(s)"
+  },
+  "reading": {
+    "initialTitle": "Your Hexagram",
+    "initialSubtitle": "The oracle has spoken. Here is your initial reading.",
+    "detailedTitle": "Detailed Reading",
+    "detailedSubtitle": "Describe your question to receive personalized guidance",
+    "description": "Description",
+    "judgment": "Judgment",
+    "image": "Image",
+    "movingLines": "Moving Lines",
+    "movingLinesCount": "Moving Lines ({{count}})",
+    "transformsInto": "Moving lines transform this hexagram into:",
+    "transformation": "This transformation adds depth to your reading",
+    "wantDeeper": "Want deeper insights?",
+    "wantDeeperDesc": "Get a personalized AI interpretation that speaks directly to your specific question and situation.",
+    "viewDetailed": "View Detailed Reading",
+    "startNew": "Start New Casting",
+    "yourHexagram": "Your Hexagram",
+    "yourQuestion": "Your Question",
+    "questionLabel": "Describe your question in your own words",
+    "questionPlaceholder": "For example: Should I accept the new job offer? I'm feeling uncertain about leaving my current position...",
+    "questionHint": "The more context you provide, the more insightful the interpretation will be.",
+    "askOracle": "Ask the Oracle",
+    "consulting": "Consulting the Oracle...",
+    "askAnother": "Ask Another Question",
+    "viewHistory": "View History",
+    "over": "over"
+  },
+  "interpretation": {
+    "summary": "Summary",
+    "detailedReading": "Detailed Reading",
+    "risks": "Risks & Pitfalls",
+    "guidance": "Guidance",
+    "initial": "Initial Reading",
+    "personalized": "Personalized Interpretation",
+    "tone": {
+      "very_favorable": "Very Favorable",
+      "favorable": "Favorable",
+      "neutral": "Neutral",
+      "challenging": "Challenging"
+    },
+    "scenes": {
+      "career": "Career",
+      "love": "Love",
+      "wealth": "Wealth",
+      "health": "Health"
+    }
+  },
+  "auth": {
+    "title": "Sign in to unlock detailed readings",
+    "description": "Enter your email to access personalized interpretations from the oracle.",
+    "emailPlaceholder": "your.email@example.com",
+    "continueButton": "Continue",
+    "disclaimer": "This is a demo. Your email is only stored locally and never sent to any server.",
+    "emailRequired": "Please enter a valid email address"
+  },
+  "history": {
+    "title": "Reading History",
+    "subtitle": "Review your past consultations with the oracle",
+    "empty": {
+      "title": "No readings yet",
+      "desc": "Your divination history will appear here once you complete your first reading.",
+      "button": "Start New Reading"
+    },
+    "aiInterpreted": "AI Interpreted",
+    "movingLinesLabel": "Moving Lines",
+    "view": "View",
+    "close": "Close",
+    "readingFrom": "Reading from {{date}}"
+  },
+  "footer": {
+    "trigrams": "☰ ☷ ☵ ☲ ☳ ☴ ☶ ☱",
+    "text": "Hex Oracle • Ancient Wisdom for Modern Seekers"
+  },
+  "errors": {
+    "generic": "An error occurred. Please try again.",
+    "apiError": "Failed to get interpretation from the oracle.",
+    "networkError": "Network error. Please check your connection."
+  }
+}
+

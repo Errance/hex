@@ -1,0 +1,147 @@
+{
+  "app": {
+    "title": "易经占卜",
+    "subtitle": "周易六爻",
+    "tagline": "古老智慧，现代启迪"
+  },
+  "nav": {
+    "history": "历史记录",
+    "language": "语言"
+  },
+  "theme": {
+    "zen": "禅道",
+    "fengshui": "风水"
+  },
+  "intro": {
+    "title": "问卦启示",
+    "subtitle": "易经占卜 • 古老智慧，现代启迪",
+    "howItWorks": "使用说明",
+    "step1": {
+      "title": "专注你的问题。",
+      "desc": "在准备摇卦时，将问题默默记在心中。"
+    },
+    "step2": {
+      "title": "摇动铜钱。",
+      "desc": "使用三枚古钱进行六次摇卦，形成你的卦象。"
+    },
+    "step3": {
+      "title": "获得指引。",
+      "desc": "获取初步解读，解锁更深入的洞见。"
+    },
+    "beginButton": "开始占卜",
+    "description": "《易经》引导求索者已逾三千年。",
+    "description2": "让这古老的智慧照亮你前行的道路。"
+  },
+  "cast": {
+    "title": "摇卦起卦",
+    "subtitle": "摇动铜钱时，专注于你的问题",
+    "chooseMethod": "选择起卦方式",
+    "autoMode": {
+      "title": "自动起卦",
+      "desc": "一次性自动完成六爻"
+    },
+    "manualMode": {
+      "title": "手动起卦",
+      "desc": "每次摇动生成一爻"
+    },
+    "animation": {
+      "title": "动画效果",
+      "enabled": "显示铜钱动画",
+      "disabled": "快速模式（无动画）",
+      "btnEnabled": "已开启",
+      "btnDisabled": "已关闭"
+    },
+    "progress": "进度",
+    "coinsPlaceholder": "摇卦时铜钱将在此显示",
+    "hexagramPlaceholder": "你的卦象将在此形成",
+    "castAllButton": "摇出全部六爻",
+    "casting": "摇卦中...",
+    "shakeFirst": "摇出第一爻",
+    "shakeLine": "摇出第{{line}}爻",
+    "shaking": "摇动中...",
+    "complete": "卦象已成！正在准备解读..."
+  },
+  "hexagram": {
+    "over": "上",
+    "movingLinesLabel": "动爻"
+  },
+  "reading": {
+    "initialTitle": "你的卦象",
+    "initialSubtitle": "神谕已现。这是你的初步解读。",
+    "detailedTitle": "详细解读",
+    "detailedSubtitle": "描述你的问题以获得个性化指引",
+    "description": "卦象说明",
+    "judgment": "卦辞",
+    "image": "象传",
+    "movingLines": "动爻",
+    "movingLinesCount": "动爻（{{count}}个）",
+    "transformsInto": "动爻将此卦变化为：",
+    "transformation": "此变化为你的解读增添深度",
+    "wantDeeper": "想要更深入的洞察？",
+    "wantDeeperDesc": "获取AI个性化解读，直接针对你的具体问题和情况。",
+    "viewDetailed": "查看详细解读",
+    "startNew": "重新占卜",
+    "yourHexagram": "你的卦象",
+    "yourQuestion": "你的问题",
+    "questionLabel": "用你自己的话描述问题",
+    "questionPlaceholder": "例如：我是否应该接受这份新工作？我对离开现在的职位感到不确定...",
+    "questionHint": "提供的背景越详细，解读就会越有洞见。",
+    "askOracle": "请示神谕",
+    "consulting": "正在请示神谕...",
+    "askAnother": "询问另一个问题",
+    "viewHistory": "查看历史",
+    "over": "上"
+  },
+  "interpretation": {
+    "summary": "概要",
+    "detailedReading": "详细解读",
+    "risks": "风险与陷阱",
+    "guidance": "指引建议",
+    "initial": "初步解读",
+    "personalized": "个性化解读",
+    "tone": {
+      "very_favorable": "非常吉利",
+      "favorable": "吉利",
+      "neutral": "中性",
+      "challenging": "需谨慎"
+    },
+    "scenes": {
+      "career": "事业",
+      "love": "感情",
+      "wealth": "财运",
+      "health": "健康"
+    }
+  },
+  "auth": {
+    "title": "登录以解锁详细解读",
+    "description": "输入你的邮箱以访问来自神谕的个性化解读。",
+    "emailPlaceholder": "你的邮箱@example.com",
+    "continueButton": "继续",
+    "disclaimer": "这是演示版本。你的邮箱仅保存在本地，绝不会发送到任何服务器。",
+    "emailRequired": "请输入有效的邮箱地址"
+  },
+  "history": {
+    "title": "占卜记录",
+    "subtitle": "回顾你过去的问卦",
+    "empty": {
+      "title": "还没有占卜记录",
+      "desc": "完成第一次占卜后，你的历史记录将在此显示。",
+      "button": "开始新的占卜"
+    },
+    "aiInterpreted": "已AI解读",
+    "movingLinesLabel": "有动爻",
+    "view": "查看",
+    "close": "关闭",
+    "readingFrom": "占卜时间：{{date}}"
+  },
+  "footer": {
+    "trigrams": "☰ ☷ ☵ ☲ ☳ ☴ ☶ ☱",
+    "text": "易经占卜 • 古老智慧，现代启迪"
+  },
+  "errors": {
+    "generic": "发生错误，请重试。",
+    "apiError": "无法获取神谕的解读。",
+    "networkError": "网络错误，请检查你的连接。"
+  }
+}
+
