@@ -16,6 +16,13 @@ export type LineCast = {
   isMoving: boolean; // 6 or 9
 };
 
+// Click entropy data for enhanced randomness (manual mode only)
+export type ClickEntropyData = {
+  x: number;
+  y: number;
+  timestamp: number;
+};
+
 export type HexagramCastResult = {
   id: string;
   createdAt: string;

@@ -1,13 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { CastModeSelector } from "../casting/CastModeSelector";
 import { CoinAnimation } from "../casting/CoinAnimation";
 import { LineProgress } from "../casting/LineProgress";
-import type { CastMethod, CoinValue, LineCast } from "@/types/divination";
-import { rollCoins, calculateLine, linesToHexagramId, calculateChangingHexagram } from "@/lib/casting";
+import type { CastMethod, CoinValue, LineCast, ClickEntropyData } from "@/types/divination";
+import { calculateLine, linesToHexagramId, calculateChangingHexagram } from "@/lib/casting";
+import { rollCoinsEnhanced } from "@/lib/enhanced-casting";
+import { getCachedBitcoinBlockHash } from "@/lib/bitcoin-api";
 
 interface CastStepProps {
   method: CastMethod;
@@ -29,9 +31,41 @@ export function CastStep({
   const [currentCoins, setCurrentCoins] = useState<[CoinValue, CoinValue, CoinValue]>([2, 2, 2]);
   const [lines, setLines] = useState<LineCast[]>([]);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [bitcoinHash, setBitcoinHash] = useState<string | null>(null);
+  const [isLoadingBitcoin, setIsLoadingBitcoin] = useState(true);
+  
+  // Ref to store button element for click position tracking
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const performCast = (lineIndex: 1 | 2 | 3 | 4 | 5 | 6) => {
-    const coins = rollCoins();
+  // Preload Bitcoin block hash on component mount
+  useEffect(() => {
+    const loadBitcoinHash = async () => {
+      setIsLoadingBitcoin(true);
+      const hash = await getCachedBitcoinBlockHash();
+      setBitcoinHash(hash);
+      setIsLoadingBitcoin(false);
+      
+      if (hash) {
+        console.log('Bitcoin entropy loaded successfully');
+      } else {
+        console.warn('Bitcoin entropy unavailable, using fallback');
+      }
+    };
+    
+    loadBitcoinHash();
+  }, []);
+
+  const performCast = async (
+    lineIndex: 1 | 2 | 3 | 4 | 5 | 6,
+    clickData?: ClickEntropyData
+  ) => {
+    // Use enhanced random generation
+    const coins = await rollCoinsEnhanced({
+      lineIndex,
+      bitcoinHash,
+      clickData,
+    });
+    
     const line = calculateLine(lineIndex, coins);
     
     setCurrentCoins(coins);
@@ -50,7 +84,8 @@ export function CastStep({
         await new Promise((resolve) => setTimeout(resolve, 100));
       }
       
-      performCast(lineIndex);
+      // Auto mode: no click data, relies on crypto + bitcoin + celestial entropy
+      await performCast(lineIndex);
       
       if (animationEnabled) {
         await new Promise((resolve) => setTimeout(resolve, 1200));
@@ -64,17 +99,24 @@ export function CastStep({
     setIsCasting(false);
   };
 
-  const handleManualCast = async () => {
+  const handleManualCast = async (event: React.MouseEvent<HTMLButtonElement>) => {
     if (lines.length >= 6) return;
     
     setIsAnimating(true);
     const lineIndex = (lines.length + 1) as 1 | 2 | 3 | 4 | 5 | 6;
     
+    // Collect click entropy data for manual mode
+    const clickData: ClickEntropyData = {
+      x: event.clientX,
+      y: event.clientY,
+      timestamp: performance.now(),
+    };
+    
     if (animationEnabled) {
       await new Promise((resolve) => setTimeout(resolve, 100));
     }
     
-    performCast(lineIndex);
+    await performCast(lineIndex, clickData);
     
     if (animationEnabled) {
       await new Promise((resolve) => setTimeout(resolve, 1200));
@@ -147,27 +189,35 @@ export function CastStep({
       <div className="flex justify-center">
         {canStartCast && method === "coins-auto" && (
           <Button
+            ref={buttonRef}
             size="lg"
             onClick={handleAutoCast}
-            disabled={isCasting}
+            disabled={isCasting || isLoadingBitcoin}
             className="min-w-48"
           >
-            {isCasting ? t("cast.casting") : t("cast.castAllButton")}
+            {isLoadingBitcoin 
+              ? "Loading..."
+              : isCasting 
+                ? t("cast.casting") 
+                : t("cast.castAllButton")}
           </Button>
         )}
 
         {canStartCast && method === "coins-manual" && (
           <Button
+            ref={buttonRef}
             size="lg"
             onClick={handleManualCast}
+            disabled={isLoadingBitcoin}
             className="min-w-48"
           >
-            {t("cast.shakeFirst")}
+            {isLoadingBitcoin ? "Loading..." : t("cast.shakeFirst")}
           </Button>
         )}
 
         {isManualInProgress && (
           <Button
+            ref={buttonRef}
             size="lg"
             onClick={handleManualCast}
             disabled={isAnimating}
