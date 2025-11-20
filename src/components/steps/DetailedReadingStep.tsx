@@ -155,17 +155,12 @@ export function DetailedReadingStep({
 
           <div className="flex justify-center gap-4 pt-6">
             <Button
-              variant="outline"
-              onClick={() => {
-                setQuestion("");
-                setInterpretation(null);
-                setError(null);
-              }}
+              onClick={() => window.location.href = "/"}
             >
-              {t("reading.askAnother")}
+              {t("reading.newReading")}
             </Button>
             <Button
-              variant="ghost"
+              variant="outline"
               onClick={() => window.location.href = "/history"}
             >
               {t("reading.viewHistory")}

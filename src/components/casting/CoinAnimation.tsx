@@ -43,7 +43,7 @@ export function CoinAnimation({ coins, isAnimating }: CoinAnimationProps) {
               {coin === 3 ? (
                 <span className="text-2xl font-bold text-primary drop-shadow-md">陽</span>
               ) : (
-                <span className="text-2xl font-bold text-card drop-shadow-md">陰</span>
+                <span className="text-2xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">陰</span>
               )}
             </div>
           </div>

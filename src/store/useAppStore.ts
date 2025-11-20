@@ -30,6 +30,7 @@ type AppState = {
   setCastResult: (result: HexagramCastResult) => void;
   saveRecord: (record: DivinationRecord) => void;
   updateRecordAi: (id: string, ai: AiInterpretation) => void;
+  resetToIntro: () => void;
 };
 
 export const useAppStore = create<AppState>()(
@@ -118,6 +119,13 @@ export const useAppStore = create<AppState>()(
             : record
         );
         set({ history: newHistory });
+      },
+      
+      resetToIntro: () => {
+        set({
+          currentStep: "intro",
+          currentCast: undefined,
+        });
       },
     }),
     {

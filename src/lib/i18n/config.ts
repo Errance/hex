@@ -28,14 +28,14 @@ if (isClient) {
 i18nInstance.init({
   resources,
   defaultNS,
-  lng: 'en', // Always start with English for SSR consistency
+  lng: undefined, // Let the detector decide on client side
   fallbackLng: 'en',
   supportedLngs: ['en', 'zh'],
   interpolation: {
     escapeValue: false,
   },
   detection: isClient ? {
-    order: ['localStorage', 'navigator'],
+    order: ['localStorage', 'navigator', 'htmlTag'],
     caches: ['localStorage'],
     lookupLocalStorage: 'hex-oracle-language',
   } : undefined,

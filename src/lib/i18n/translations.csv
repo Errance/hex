@@ -64,6 +64,7 @@ reading.questionHint,The more context you provide the more insightful the interp
 reading.askOracle,Ask the Oracle,询问神谕,Submit button,reading
 reading.consulting,Consulting the Oracle...,正在咨询神谕...,Loading status,reading
 reading.askAnother,Ask Another Question,询问另一个问题,Button text,reading
+reading.newReading,New Reading (Re-cast),新占卜（重新起卦）,Button text,reading
 reading.viewHistory,View History,查看历史,Button text,reading
 reading.over,over,变为,Transformation indicator,reading
 interpretation.summary,Summary,摘要,Section title,interpretation
