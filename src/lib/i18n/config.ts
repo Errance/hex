@@ -28,7 +28,7 @@ if (isClient) {
 i18nInstance.init({
   resources,
   defaultNS,
-  lng: undefined, // Let the detector decide on client side
+  lng: isClient ? undefined : 'en', // SSR uses 'en', client detects
   fallbackLng: 'en',
   supportedLngs: ['en', 'zh'],
   interpolation: {
@@ -39,6 +39,9 @@ i18nInstance.init({
     caches: ['localStorage'],
     lookupLocalStorage: 'hex-oracle-language',
   } : undefined,
+  react: {
+    useSuspense: false, // Prevent hydration mismatch
+  },
 });
 
 export default i18n;
