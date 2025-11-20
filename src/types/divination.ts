@@ -1,6 +1,6 @@
 // src/types/divination.ts
 
-import type { HexagramView } from "@/content/types";
+import type { HexagramView } from "@/content/hexagrams";
 
 export type CastMethod = "coins-auto" | "coins-manual";
 

@@ -2,7 +2,7 @@
 
 import { useTranslation } from "react-i18next";
 import { Card } from "@/components/ui/card";
-import type { HexagramView } from "@/content/types";
+import type { HexagramView } from "@/content/hexagrams";
 
 interface InitialInterpretationProps {
   summary: HexagramView['summary'];

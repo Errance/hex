@@ -9,7 +9,8 @@ import { CastStep } from "@/components/steps/CastStep";
 import { InitialReadingStep } from "@/components/steps/InitialReadingStep";
 import { DetailedReadingStep } from "@/components/steps/DetailedReadingStep";
 import { MockLoginModal } from "@/components/auth/MockLoginModal";
-import { getHexagram } from "@/content/utils";
+import { getHexagramView } from "@/content/hexagrams";
+import type { HexagramView } from "@/content/hexagrams";
 import { getMovingLineIndices } from "@/lib/casting";
 import { useI18n } from "@/lib/i18n/useI18n";
 import type { LineCast, AiInterpretation } from "@/types/divination";
@@ -36,6 +37,8 @@ export default function HomePage() {
   const [completedCastLines, setCompletedCastLines] = useState<LineCast[]>([]);
   const [baseHexagramId, setBaseHexagramId] = useState<number | null>(null);
   const [changingHexagramId, setChangingHexagramId] = useState<number | null>(null);
+  const [hexagram, setHexagram] = useState<HexagramView | null>(null);
+  const [changingHexagram, setChangingHexagram] = useState<HexagramView | null>(null);
 
   const handleBeginCasting = () => {
     startNewCast(castMethod);
@@ -91,9 +94,23 @@ export default function HomePage() {
     updateRecordAi(record.id, interpretation);
   };
 
-  // Get hexagram data for current reading with i18n support
-  const hexagram = baseHexagramId ? getHexagram(baseHexagramId, lang) : null;
-  const changingHexagram = changingHexagramId ? getHexagram(changingHexagramId, lang) : null;
+  // Load hexagram data when IDs or language change
+  useEffect(() => {
+    if (baseHexagramId) {
+      getHexagramView(baseHexagramId, lang).then(setHexagram);
+    } else {
+      setHexagram(null);
+    }
+  }, [baseHexagramId, lang]);
+
+  useEffect(() => {
+    if (changingHexagramId) {
+      getHexagramView(changingHexagramId, lang).then(setChangingHexagram);
+    } else {
+      setChangingHexagram(null);
+    }
+  }, [changingHexagramId, lang]);
+
   const movingLines = completedCastLines.length > 0 ? getMovingLineIndices(completedCastLines) : [];
 
   return (

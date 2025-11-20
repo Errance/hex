@@ -1,10 +1,12 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useI18n } from "@/lib/i18n/useI18n";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import type { DivinationRecord } from "@/types/divination";
-import { getHexagram } from "@/content/utils";
+import { getHexagramView } from "@/content/hexagrams";
+import type { HexagramView } from "@/content/hexagrams";
 
 interface HistoryListProps {
   records: DivinationRecord[];
@@ -13,6 +15,23 @@ interface HistoryListProps {
 
 export function HistoryList({ records, onSelectRecord }: HistoryListProps) {
   const { t, lang } = useI18n();
+  const [hexagrams, setHexagrams] = useState<Map<number, HexagramView>>(new Map());
+
+  // Preload hexagrams for all records
+  useEffect(() => {
+    const loadHexagrams = async () => {
+      const newHexagrams = new Map<number, HexagramView>();
+      for (const record of records) {
+        const id = record.castResult.baseHexagramId;
+        if (!newHexagrams.has(id)) {
+          const hex = await getHexagramView(id, lang);
+          if (hex) newHexagrams.set(id, hex);
+        }
+      }
+      setHexagrams(newHexagrams);
+    };
+    loadHexagrams();
+  }, [records, lang]);
   
   if (records.length === 0) {
     return (
@@ -32,7 +51,7 @@ export function HistoryList({ records, onSelectRecord }: HistoryListProps) {
   return (
     <div className="space-y-4">
       {records.map((record) => {
-        const hexagram = getHexagram(record.castResult.baseHexagramId, lang);
+        const hexagram = hexagrams.get(record.castResult.baseHexagramId);
         const date = new Date(record.createdAt);
         const hasAi = !!record.aiInterpretation;
 

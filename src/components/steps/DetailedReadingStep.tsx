@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { DetailedInterpretation } from "../reading/DetailedInterpretation";
 import type { AiInterpretation, InterpretRequest } from "@/types/divination";
-import type { HexagramView } from "@/content/types";
+import type { HexagramView } from "@/content/hexagrams";
 import { useI18n } from "@/lib/i18n/useI18n";
 
 interface DetailedReadingStepProps {

@@ -6,7 +6,7 @@ import { HexagramDiagram } from "../reading/HexagramDiagram";
 import { HexagramSummaryCard } from "../reading/HexagramSummaryCard";
 import { MovingLinesList } from "../reading/MovingLinesList";
 import { InitialInterpretation } from "../reading/InitialInterpretation";
-import type { HexagramView } from "@/content/types";
+import type { HexagramView } from "@/content/hexagrams";
 import type { LineCast } from "@/types/divination";
 
 interface InitialReadingStepProps {

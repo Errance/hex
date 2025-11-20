@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useAppStore } from "@/store/useAppStore";
 import { HistoryList } from "@/components/history/HistoryList";
@@ -16,7 +16,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { getHexagram } from "@/content/utils";
+import { getHexagramView } from "@/content/hexagrams";
+import type { HexagramView } from "@/content/hexagrams";
 import { useI18n } from "@/lib/i18n/useI18n";
 import type { DivinationRecord } from "@/types/divination";
 
@@ -24,6 +25,8 @@ export default function HistoryPage() {
   const { t, lang } = useI18n();
   const { history } = useAppStore();
   const [selectedRecord, setSelectedRecord] = useState<DivinationRecord | null>(null);
+  const [hexagram, setHexagram] = useState<HexagramView | null>(null);
+  const [changingHexagram, setChangingHexagram] = useState<HexagramView | null>(null);
 
   const handleSelectRecord = (record: DivinationRecord) => {
     setSelectedRecord(record);
@@ -33,13 +36,20 @@ export default function HistoryPage() {
     setSelectedRecord(null);
   };
 
-  const hexagram = selectedRecord
-    ? getHexagram(selectedRecord.castResult.baseHexagramId, lang)
-    : null;
-  
-  const changingHexagram = selectedRecord?.castResult.changingHexagramId
-    ? getHexagram(selectedRecord.castResult.changingHexagramId, lang)
-    : null;
+  // Load hexagrams when record or language changes
+  useEffect(() => {
+    if (selectedRecord) {
+      getHexagramView(selectedRecord.castResult.baseHexagramId, lang).then(setHexagram);
+      if (selectedRecord.castResult.changingHexagramId) {
+        getHexagramView(selectedRecord.castResult.changingHexagramId, lang).then(setChangingHexagram);
+      } else {
+        setChangingHexagram(null);
+      }
+    } else {
+      setHexagram(null);
+      setChangingHexagram(null);
+    }
+  }, [selectedRecord, lang]);
 
   return (
     <div className="max-w-4xl mx-auto">
