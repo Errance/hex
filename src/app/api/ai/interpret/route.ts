@@ -2,6 +2,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import type { InterpretRequest, InterpretResponse } from "@/types/divination";
+import { serverEnv, clientEnv, validateServerEnv } from "@/lib/env";
 
 const SYSTEM_PROMPT_EN = `
 You are an experienced I Ching (Yijing) divination interpreter.
@@ -115,32 +116,30 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(res, { status: 400 });
   }
 
-  // Trim all environment variables to remove any whitespace/newlines
-  const apiKey = process.env.OPENROUTER_API_KEY?.trim();
-  const baseUrl = (process.env.OPENROUTER_BASE_URL ?? "https://openrouter.ai/api/v1").trim();
-  const model = (process.env.OPENROUTER_MODEL ?? "openai/gpt-4o-mini").trim();
-
-  // Debug logging
-  console.log('API Configuration:', {
-    hasApiKey: !!apiKey,
-    apiKeyLength: apiKey?.length,
-    apiKeyPrefix: apiKey?.substring(0, 15) + '...',
-    baseUrl,
-    model,
-    language: body.language || "en",
-  });
-
-  if (!apiKey) {
-    console.error('Missing OPENROUTER_API_KEY');
+  // Validate environment configuration
+  const envCheck = validateServerEnv();
+  if (!envCheck.valid) {
+    console.error('Environment validation failed:', envCheck.error);
     const res: InterpretResponse = {
       success: false,
-      error: "OPENROUTER_API_KEY is not configured on the server.",
+      error: envCheck.error || "Server configuration error.",
     };
     return NextResponse.json(res, { status: 500 });
   }
 
-  const userPrompt = buildUserPrompt(body);
+  // Use centralized config
+  const { apiKey, baseUrl, model } = serverEnv.openRouter;
   const language = body.language || "en";
+
+  // Debug logging (safe - no secrets exposed)
+  console.log('API Configuration:', {
+    language,
+    model,
+    hasApiKey: !!apiKey,
+    apiKeyLength: apiKey.length,
+  });
+
+  const userPrompt = buildUserPrompt(body);
   const systemPrompt = language === "zh" ? SYSTEM_PROMPT_ZH : SYSTEM_PROMPT_EN;
 
   try {
@@ -154,7 +153,7 @@ export async function POST(req: NextRequest) {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
         // These headers are recommended by OpenRouter
-        "HTTP-Referer": process.env.NEXT_PUBLIC_APP_URL ?? "https://hex-oracle.vercel.app",
+        "HTTP-Referer": clientEnv.appUrl,
         "X-Title": "Hex Oracle",
       },
       body: JSON.stringify({

@@ -52,14 +52,26 @@ pnpm install
 
 3. **Set up environment variables**
 
-Create a `.env.local` file in the root directory:
+Copy the example environment file and configure it:
+
+```bash
+cp .env.example .env.local
+```
+
+Then edit `.env.local` and add your OpenRouter API key:
 
 ```env
 OPENROUTER_API_KEY=your_openrouter_api_key_here
 OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
-OPENROUTER_MODEL=openai/gpt-4o-mini
+OPENROUTER_MODEL=deepseek/deepseek-v3.2-exp
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
+
+**Environment Variables:**
+- `OPENROUTER_API_KEY` (required): Your OpenRouter API key from [openrouter.ai/keys](https://openrouter.ai/keys)
+- `OPENROUTER_BASE_URL` (optional): API base URL (default: `https://openrouter.ai/api/v1`)
+- `OPENROUTER_MODEL` (optional): AI model to use (default: `openai/gpt-4o-mini`)
+- `NEXT_PUBLIC_APP_URL` (optional): Application URL (default: `http://localhost:3000`)
 
 4. **Run the development server**
 
